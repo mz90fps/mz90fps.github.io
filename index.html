@@ -16,31 +16,31 @@ body {
     color: #111;
 }
 
-/* 🔥 FIXED SMOOTH LOOP RIBBON */
+/* 🔥 PERFECT FIXED RIBBON */
 .amazon-ribbon {
   position: fixed;
-  top: 65px;
-  left: -120px;
-  width: 500px;
-  transform: rotate(-55deg);
+  top: 20px;          /* 🔥 adjusted position */
+  left: -110px;       /* 🔥 moved inside properly */
+  width: 420px;
+  transform: rotate(-45deg);
   overflow: hidden;
   z-index: 9999;
-  opacity: 0.22;
+  opacity: 0.18;
   pointer-events: none;
 }
 
 .ribbon-track {
   display: flex;
   width: max-content;
-  animation: scrollText 12s linear infinite;
+  animation: scrollText 10s linear infinite;
 }
 
 .ribbon-track span {
   white-space: nowrap;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 600;
   color: #7a746d;
-  padding-right: 60px; /* spacing between loops */
+  padding-right: 80px;
 }
 
 @keyframes scrollText {
@@ -105,7 +105,6 @@ body {
 
 .container { margin-top:20px;padding-bottom:20px; }
 
-/* BUTTON */
 .btn {
     display:flex;
     align-items:center;
@@ -147,7 +146,7 @@ body {
 
 <body>
 
-<!-- 🔥 PERFECT LOOP RIBBON -->
+<!-- 🔥 FINAL PERFECT RIBBON -->
 <div class="amazon-ribbon">
   <div class="ribbon-track">
     <span>MZ90FPS | INSTAGRAM | As an Amazon Associate, I earn from qualifying purchases</span>
