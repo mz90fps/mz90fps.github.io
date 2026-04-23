@@ -16,6 +16,33 @@ body {
     color: #111;
 }
 
+/* 🔥 NEW AMAZON RIBBON */
+.amazon-ribbon {
+  position: fixed;
+  top: 60px;
+  left: -80px;
+  width: 320px;
+  transform: rotate(-55deg);
+  overflow: hidden;
+  z-index: 999;
+  opacity: 0.25;
+  pointer-events: none;
+}
+
+.amazon-ribbon span {
+  display: inline-block;
+  white-space: nowrap;
+  font-size: 15px;
+  font-weight: 600;
+  color: #7a746d;
+  animation: moveRibbon 14s linear infinite;
+}
+
+@keyframes moveRibbon {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
 /* SEARCH ICON */
 #searchIcon {
     position: fixed;
@@ -82,7 +109,7 @@ body {
     border-radius:30px;
     padding:12px 18px;
     margin:12px auto;
-    width:85%; /* 🔥 PERFECT SIDE GAP */
+    width:85%;
     max-width:500px;
     cursor:pointer;
     transition:0.3s;
@@ -114,6 +141,11 @@ body {
 </head>
 
 <body>
+
+<!-- 🔥 NEW RIBBON -->
+<div class="amazon-ribbon">
+  <span>MZ90FPS | INSTAGRAM | As an Amazon Associate, I earn from qualifying purchases | © 2026 mz90fps</span>
+</div>
 
 <div id="searchIcon" onclick="openSearch()">🔍</div>
 
