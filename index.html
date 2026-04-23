@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>MZ90FPS</title>
+
+<style>
+html { scroll-behavior: smooth; }
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #e8d8c3;
+    text-align: center;
+    color: #111;
+}
+
+/* 🔥 FIXED SMOOTH LOOP RIBBON */
+.amazon-ribbon {
+  position: fixed;
+  top: 65px;
+  left: -120px;
+  width: 500px;
+  transform: rotate(-55deg);
+  overflow: hidden;
+  z-index: 9999;
+  opacity: 0.22;
+  pointer-events: none;
+}
+
+.ribbon-track {
+  display: flex;
+  width: max-content;
+  animation: scrollText 12s linear infinite;
+}
+
+.ribbon-track span {
+  white-space: nowrap;
+  font-size: 15px;
+  font-weight: 600;
+  color: #7a746d;
+  padding-right: 60px; /* spacing between loops */
+}
+
+@keyframes scrollText {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* SEARCH ICON */
+#searchIcon {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    font-size: 22px;
+    cursor: pointer;
+    z-index: 999;
+}
+
+/* SEARCH BAR */
+#searchBar {
+    display:none;
+    position:fixed;
+    top:10px;
+    left:10px;
+    right:60px;
+    z-index:1000;
+}
+
+#searchInput {
+    width:100%;
+    padding:15px;
+    border-radius:30px;
+    border:2px solid #111;
+    font-size:16px;
+}
+
+/* CLOSE BUTTON */
+#closeSearch {
+    position:fixed;
+    top:12px;
+    right:50px;
+    font-size:25px;
+    cursor:pointer;
+    display:none;
+    z-index:1001;
+}
+
+/* EXISTING */
+.profile img {
+    width:120px;height:120px;border-radius:50%;
+    margin-top:30px;object-fit:cover;
+}
+
+.name { font-size:28px;font-weight:bold;margin-top:10px; }
+.name img { width:20px;vertical-align:middle; }
+
+.bio { margin:15px;font-size:16px;line-height:1.6; }
+
+.social img {
+    width:30px;margin:10px;cursor:pointer;transition:0.2s;
+}
+.social img:hover { transform:scale(1.2); }
+
+.container { margin-top:20px;padding-bottom:20px; }
+
+/* BUTTON */
+.btn {
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    background:#eadcc8;
+    border-radius:30px;
+    padding:12px 18px;
+    margin:12px auto;
+    width:85%;
+    max-width:500px;
+    cursor:pointer;
+    transition:0.3s;
+    border:1px solid #d3c2aa;
+}
+.btn:hover { background:#e0cfb8; }
+
+.left { display:flex;align-items:center; }
+.left img {
+    width:45px;height:45px;border-radius:50%;margin-right:15px;
+}
+
+.text { font-size:16px; }
+.dots { font-size:20px;cursor:pointer; }
+
+.footer {
+    margin-top:30px;margin-bottom:20px;
+    font-size:12px;opacity:0.6;
+}
+
+.popup {
+    position:fixed;bottom:20px;left:50%;
+    transform:translateX(-50%);
+    background:black;color:white;
+    padding:10px 20px;border-radius:20px;
+    display:none;
+}
+</style>
+</head>
+
+<body>
+
+<!-- 🔥 PERFECT LOOP RIBBON -->
+<div class="amazon-ribbon">
+  <div class="ribbon-track">
+    <span>MZ90FPS | INSTAGRAM | As an Amazon Associate, I earn from qualifying purchases</span>
+    <span>MZ90FPS | INSTAGRAM | As an Amazon Associate, I earn from qualifying purchases</span>
+  </div>
+</div>
+
+<div id="searchIcon" onclick="openSearch()">🔍</div>
+
+<div id="searchBar">
+<input id="searchInput" type="text" placeholder="Search...">
+</div>
+<div id="closeSearch" onclick="closeSearch()">✕</div>
+
+<div id="main">
+
+<div class="profile">
+<a href="https://www.instagram.com/mz90fps">
+<img src="Logo.png">
+</a>
+</div>
+
+<div class="name">MZ90FPS <img src="bluetick.png"></div>
+
+<div class="bio">
+• Tech Creator | Setups | Game clips <br>
+For collab - mazinetvtr@gmail.com
+</div>
+
+<div class="social">
+<a href="https://www.Instagram.com/mz90fps">
+<img src="Instagram.png">
+</a>
+<a href="mailto:mazinetvtr@gmail.com">
+<img src="email.png">
+</a>
+</div>
+
+<div class="container">
+
+<!-- BUTTONS SAME -->
+<div class="btn" onclick="openLink('https://cybeart.in/products/ghost-gaming-mouse')">
+<div class="left">
+<img src="Ghostmouse.png">
+<div class="text">Cybeart GHOST Gaming Mouse <br>Use code "mz10" to get 10% off</div>
+</div>
+<div class="dots" onclick="shareLink(event, 'https://cybeart.in/products/ghost-gaming-mouse')">⋮</div>
+</div>
+
+<div class="btn" onclick="openLink('https://amzn.to/41r8UvD')">
+<div class="left">
+<img src="Rgbneon.png">
+<div class="text">RGB Neon LED Strip Light</div>
+</div>
+<div class="dots" onclick="shareLink(event, 'https://amzn.to/41r8UvD')">⋮</div>
+</div>
+
+<div class="btn" onclick="openLink('https://amzn.to/3OsW653')">
+<div class="left">
+<img src="Walllight.png">
+<div class="text">Wall Light</div>
+</div>
+<div class="dots" onclick="shareLink(event, 'https://amzn.to/3OsW653')">⋮</div>
+</div>
+
+<div class="btn" onclick="openLink('https://amzn.to/4tevkwn')">
+<div class="left">
+<img src="Coolingpad.png">
+<div class="text">Zebronics Laptop Cooling Pad</div>
+</div>
+<div class="dots" onclick="shareLink(event, 'https://amzn.to/4tevkwn')">⋮</div>
+</div>
+
+<div class="btn" onclick="openLink('https://amzn.to/4vFkKjR')">
+<div class="left">
+<img src="Laptopstand.png">
+<div class="text">Zebronics Laptop Stand</div>
+</div>
+<div class="dots" onclick="shareLink(event, 'https://amzn.to/4vFkKjR')">⋮</div>
+</div>
+    
+<div class="btn" onclick="openLink('https://amzn.to/4mjZ746')">
+<div class="left">
+<img src="Kreokeyboard.png">
+<div class="text">Kreo Keyboard</div>
+</div>
+<div class="dots" onclick="shareLink(event, 'https://amzn.to/4mjZ746')">⋮</div>
+</div>
+
+<div class="btn" onclick="openLink('https://amzn.to/3QhFbmt')">
+<div class="left">
+<img src="Desk.png">
+<div class="text">Computer Desk</div>
+</div>
+<div class="dots" onclick="shareLink(event, 'https://amzn.to/3QhFbmt')">⋮</div>
+</div>
+
+<div class="btn" onclick="showSection('section2')">
+<div class="left">
+<div class="text">Wallpapers link ➜</div>
+</div>
+</div>
+
+</div>
+
+<div class="footer">
+As an Amazon Associate, I earn from qualifying purchases.<br>
+© 2026 mz90fps
+</div>
+
+</div>
+
+<!-- SECTION 2 -->
+<div id="section2" style="display:none;">
+<div class="container">
+
+<div class="btn" onclick="showSection('main')">
+<div class="left"><div class="text">⬅ Back</div></div>
+</div>
+
+<div class="btn" onclick="openLink('https://drive.google.com/drive/folders/1PFEj6BdL_TP5X8j8cOljwfUUUuNU6s9K?usp=sharing')">
+<div class="left"><div class="text">Part 12</div></div>
+</div>
+    
+<div class="btn" onclick="openLink('https://drive.google.com/drive/folders/1Zw31p2oZOX__n9V7aQr20h3e55CA_dsV?usp=sharing')">
+<div class="left"><div class="text">Part 11</div></div>
+</div>
+    
+<div class="btn" onclick="openLink('https://drive.google.com/drive/folders/1tO6bBrA7snAVQKkHuMgFMJTjuoZ7kk04?usp=sharing')">
+<div class="left"><div class="text">Part 10</div></div>
+</div>
+    
+<div class="btn" onclick="openLink('https://drive.google.com/drive/folders/1UbY0qEwOdnyH3Nv3-ZTYk1r3i6kW3HU_?usp=sharing')">
+<div class="left"><div class="text">Part 9</div></div>
+</div>
+    
+<div class="btn" onclick="openLink('https://drive.google.com/drive/folders/1aH3n-L6NeYh6JlBZTxff6mMUmAlTYWwz?usp=sharing')">
+<div class="left"><div class="text">Part 8</div></div>
+</div>
+
+<div class="btn" onclick="openLink('https://drive.google.com/drive/folders/1L62R_OJssmy3JSCIFiiTbOgX1K7hcSYZ?usp=sharing')">
+<div class="left"><div class="text">Part 7</div></div>
+</div>
+    
+<div class="btn" onclick="openLink('https://drive.google.com/drive/folders/1HKOveuOcKIY62tc9NzdTnPw_mKgXCQ-m?usp=sharing')">
+<div class="left"><div class="text">Part 6</div></div>
+</div>
+
+<div class="btn" onclick="openLink('https://drive.google.com/drive/folders/1hL7bHFyO6fySl0TvHUoDqPKBzZRZIuou?usp=drive_link')">
+<div class="left"><div class="text">Part 5</div></div>
+</div>
+    
+<div class="btn" onclick="openLink('https://drive.google.com/drive/folders/16DqUOXQ4b0yBGz8HVUbWZ8AnT7sX23dK?usp=drive_link')">
+<div class="left"><div class="text">Part 4</div></div>
+</div>
+    
+<div class="btn" onclick="openLink('https://drive.google.com/file/d/1DkIWL4i1UNGqL7Ce1u82xHoxZYnbfJcn/view?usp=drive_link')">
+<div class="left"><div class="text">Part 3</div></div>
+</div>
+
+<div class="btn" onclick="openLink('https://drive.google.com/file/d/1hni65CNpB_JoQRGDFtLGOhNbgb__RS1a/view?usp=drive_link')">
+<div class="left"><div class="text">Part 2</div></div>
+</div>
+
+<div class="btn" onclick="openLink('https://drive.google.com/drive/folders/1Bc7zg5-52IQ7zmfVqBS5U-cskBglaJxS')">
+<div class="left"><div class="text">Part 1</div></div>
+</div>
+
+</div>
+</div>
+
+<div id="popup" class="popup">Link Copied!</div>
+
+<script>
+function openLink(link){ window.location.href=link; }
+
+function shareLink(event,link){
+event.stopPropagation();
+if(navigator.share){
+navigator.share({title:"Check this out",url:link});
+}else{
+navigator.clipboard.writeText(link);
+document.getElementById("popup").style.display="block";
+setTimeout(()=>{document.getElementById("popup").style.display="none";},2000);
+}
+}
+
+function showSection(section){
+document.getElementById("main").style.display="none";
+document.getElementById("section2").style.display="none";
+document.getElementById(section).style.display="block";
+}
+
+function openSearch(){
+document.getElementById("searchBar").style.display="block";
+document.getElementById("closeSearch").style.display="block";
+document.getElementById("searchInput").focus();
+}
+
+function closeSearch(){
+document.getElementById("searchBar").style.display="none";
+document.getElementById("closeSearch").style.display="none";
+document.getElementById("searchInput").value="";
+filterButtons("");
+}
+
+document.getElementById("searchInput").addEventListener("input",function(){
+filterButtons(this.value.toLowerCase());
+});
+
+function filterButtons(value){
+let buttons=document.querySelectorAll(".btn");
+
+buttons.forEach(btn=>{
+let text=btn.innerText.toLowerCase();
+
+if(text.includes(value)){
+btn.style.display="flex";
+}else{
+btn.style.display="none";
+}
+});
+}
+</script>
+
+</body>
+</html>
