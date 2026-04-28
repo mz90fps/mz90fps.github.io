@@ -1,11 +1,13 @@
+/* ==== WALLPAPER SECTION STYLE ==== */
 #section2 {
   padding: 20px;
+  animation: fadeIn 0.3s ease;
 }
 
 .wall-text {
   max-width: 600px;
   margin: 10px auto 25px auto;
-  line-height: 1.6;
+  line-height: 1.7;
   font-size: 15px;
   color: #222;
   text-align: center;
@@ -14,12 +16,25 @@
 #section2 h2 {
   margin-bottom: 10px;
   font-size: 22px;
+  font-weight: 600;
 }
 
-.btn {
+#section2 .btn {
   margin-top: 10px;
+  transition: 0.2s;
 }
 
-#section2 .btn:first-child {
-  margin-top: 15px;
+#section2 .btn:hover {
+  transform: scale(1.02);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
