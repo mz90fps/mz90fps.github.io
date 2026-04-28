@@ -107,3 +107,14 @@ function shareLink(event, link) {
         }
     }
 }
+
+
+// ✅🔥 AUTO OPEN SECTION FROM URL (#section3 etc)
+window.addEventListener("load", () => {
+    let hash = window.location.hash;
+
+    if (hash) {
+        let id = hash.replace("#", "");
+        showSection(id);
+    }
+});
