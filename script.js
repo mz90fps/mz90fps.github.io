@@ -1,13 +1,11 @@
-// 🔥 SHOW SECTION (scalable version)
+// 🔥 SHOW SECTION (all sections handle cheyyum)
 function showSection(id) {
-    // ella sections hide cheyyum
     let sections = document.querySelectorAll('[id^="section"], #main');
 
     sections.forEach(sec => {
         sec.style.display = 'none';
     });
 
-    // selected section show
     let active = document.getElementById(id);
     if (active) {
         active.style.display = 'block';
@@ -16,14 +14,16 @@ function showSection(id) {
     // 🔥 scroll always top
     window.scrollTo({
         top: 0,
-        behavior: "instant" // "smooth" venel change cheyyam
+        behavior: "instant" // smooth venel "smooth"
     });
 }
 
-// 🔗 OPEN EXTERNAL LINK
+
+// 🔗 OPEN EXTERNAL LINKS
 function openLink(url) {
     window.open(url, '_blank');
 }
+
 
 // 🔍 SEARCH OPEN
 function openSearch() {
@@ -31,20 +31,42 @@ function openSearch() {
     if (bar) bar.style.display = "block";
 }
 
+
 // ❌ SEARCH CLOSE
 function closeSearch() {
     let bar = document.getElementById("searchBar");
     if (bar) bar.style.display = "none";
 }
 
-// ⌨️ ENTER KEY SEARCH (optional)
+
+// 🔎 FILTER BUTTONS (search working)
+function filterButtons(value) {
+    let buttons = document.querySelectorAll(".btn");
+
+    buttons.forEach(btn => {
+        let text = btn.innerText.toLowerCase();
+
+        if (text.includes(value)) {
+            btn.style.display = "flex";
+        } else {
+            btn.style.display = "none";
+        }
+    });
+}
+
+
+// ⌨️ ENTER KEY + LIVE SEARCH
 document.addEventListener("DOMContentLoaded", function () {
     let input = document.getElementById("searchInput");
 
     if (input) {
+        input.addEventListener("input", function () {
+            filterButtons(this.value.toLowerCase());
+        });
+
         input.addEventListener("keypress", function (e) {
             if (e.key === "Enter") {
-                alert("Search feature coming soon 🚀");
+                filterButtons(this.value.toLowerCase());
             }
         });
     }
