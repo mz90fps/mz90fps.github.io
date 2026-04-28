@@ -14,30 +14,37 @@ function showSection(id) {
     // 🔥 always start from top
     window.scrollTo({
         top: 0,
-        behavior: "auto" // smooth venel "smooth"
+        behavior: "auto"
     });
 }
 
 
-// 🔗 OPEN LINK (safe method)
+// 🔗 OPEN LINK (new tab better UX)
 function openLink(url) {
-    window.location.href = url;
+    window.open(url, "_blank");
 }
 
 
 // 🔍 SEARCH OPEN
 function openSearch() {
     let bar = document.getElementById("searchBar");
+    let closeBtn = document.getElementById("closeSearch");
+    let input = document.getElementById("searchInput");
+
     if (bar) bar.style.display = "block";
+    if (closeBtn) closeBtn.style.display = "block";
+    if (input) input.focus();
 }
 
 
 // ❌ SEARCH CLOSE
 function closeSearch() {
     let bar = document.getElementById("searchBar");
-    if (bar) bar.style.display = "none";
-
+    let closeBtn = document.getElementById("closeSearch");
     let input = document.getElementById("searchInput");
+
+    if (bar) bar.style.display = "none";
+    if (closeBtn) closeBtn.style.display = "none";
     if (input) input.value = "";
 
     filterButtons(""); // reset list
@@ -78,7 +85,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-// 📤 SHARE FUNCTION (optional – safe)
+// 📤 SHARE FUNCTION (optional)
 function shareLink(event, link) {
     event.stopPropagation();
 
