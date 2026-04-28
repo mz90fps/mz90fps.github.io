@@ -1,0 +1,25 @@
+#section2 {
+  padding: 20px;
+}
+
+.wall-text {
+  max-width: 600px;
+  margin: 10px auto 25px auto;
+  line-height: 1.6;
+  font-size: 15px;
+  color: #222;
+  text-align: center;
+}
+
+#section2 h2 {
+  margin-bottom: 10px;
+  font-size: 22px;
+}
+
+.btn {
+  margin-top: 10px;
+}
+
+#section2 .btn:first-child {
+  margin-top: 15px;
+}
