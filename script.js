@@ -17,8 +17,12 @@ function showSection(id) {
 }
 
 
-// 🔙 BACK FUNCTION (NEW)
+// 🔙 BACK FUNCTION (NO JUMP PERFECT FIX)
 function goBack() {
+
+    // ✅ GET SCROLL POSITION FIRST
+    let scrollPos = sessionStorage.getItem("scrollPos");
+
     let sections = document.querySelectorAll('[id^="section"]');
 
     sections.forEach(sec => {
@@ -30,10 +34,11 @@ function goBack() {
         main.style.display = 'block';
     }
 
-    // ✅ RESTORE SCROLL POSITION
-    let scrollPos = sessionStorage.getItem("scrollPos");
+    // ✅ RESTORE SCROLL WITHOUT JUMP (IMPORTANT)
     if (scrollPos !== null) {
-        window.scrollTo(0, parseInt(scrollPos));
+        requestAnimationFrame(() => {
+            window.scrollTo(0, parseInt(scrollPos));
+        });
     }
 }
 
