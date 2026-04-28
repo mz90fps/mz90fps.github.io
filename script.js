@@ -19,13 +19,13 @@ function showSection(id) {
 }
 
 
-// 🔗 OPEN LINK (new tab better UX)
+// 🔗 OPEN LINK (new tab)
 function openLink(url) {
     window.open(url, "_blank");
 }
 
 
-// 🔍 SEARCH OPEN
+// 🔍 SEARCH OPEN (FIXED 🔥)
 function openSearch() {
     let bar = document.getElementById("searchBar");
     let closeBtn = document.getElementById("closeSearch");
@@ -37,7 +37,7 @@ function openSearch() {
 }
 
 
-// ❌ SEARCH CLOSE
+// ❌ SEARCH CLOSE (FIXED 🔥)
 function closeSearch() {
     let bar = document.getElementById("searchBar");
     let closeBtn = document.getElementById("closeSearch");
@@ -47,7 +47,7 @@ function closeSearch() {
     if (closeBtn) closeBtn.style.display = "none";
     if (input) input.value = "";
 
-    filterButtons(""); // reset list
+    filterButtons("");
 }
 
 
@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-// 📤 SHARE FUNCTION (optional)
+// 📤 SHARE FUNCTION (safe)
 function shareLink(event, link) {
     event.stopPropagation();
 
