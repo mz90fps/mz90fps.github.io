@@ -1,5 +1,9 @@
 // 🔥 SHOW SECTION (handles all sections)
 function showSection(id) {
+
+    // ✅ SAVE SCROLL POSITION
+    sessionStorage.setItem("scrollPos", window.scrollY);
+
     let sections = document.querySelectorAll('[id^="section"], #main');
 
     sections.forEach(sec => {
@@ -10,12 +14,27 @@ function showSection(id) {
     if (active) {
         active.style.display = 'block';
     }
+}
 
-    // 🔥 always start from top
-    window.scrollTo({
-        top: 0,
-        behavior: "auto"
+
+// 🔙 BACK FUNCTION (NEW)
+function goBack() {
+    let sections = document.querySelectorAll('[id^="section"]');
+
+    sections.forEach(sec => {
+        sec.style.display = 'none';
     });
+
+    let main = document.getElementById("main");
+    if (main) {
+        main.style.display = 'block';
+    }
+
+    // ✅ RESTORE SCROLL POSITION
+    let scrollPos = sessionStorage.getItem("scrollPos");
+    if (scrollPos !== null) {
+        window.scrollTo(0, parseInt(scrollPos));
+    }
 }
 
 
