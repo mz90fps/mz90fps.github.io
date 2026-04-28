@@ -1,4 +1,4 @@
-// 🔥 SHOW SECTION (all sections handle cheyyum)
+// 🔥 SHOW SECTION (handles all sections)
 function showSection(id) {
     let sections = document.querySelectorAll('[id^="section"], #main');
 
@@ -11,17 +11,17 @@ function showSection(id) {
         active.style.display = 'block';
     }
 
-    // 🔥 scroll always top
+    // 🔥 always start from top
     window.scrollTo({
         top: 0,
-        behavior: "instant" // smooth venel "smooth"
+        behavior: "auto" // smooth venel "smooth"
     });
 }
 
 
-// 🔗 OPEN EXTERNAL LINKS
+// 🔗 OPEN LINK (safe method)
 function openLink(url) {
-    window.open(url, '_blank');
+    window.location.href = url;
 }
 
 
@@ -36,10 +36,15 @@ function openSearch() {
 function closeSearch() {
     let bar = document.getElementById("searchBar");
     if (bar) bar.style.display = "none";
+
+    let input = document.getElementById("searchInput");
+    if (input) input.value = "";
+
+    filterButtons(""); // reset list
 }
 
 
-// 🔎 FILTER BUTTONS (search working)
+// 🔎 FILTER BUTTONS (live search)
 function filterButtons(value) {
     let buttons = document.querySelectorAll(".btn");
 
@@ -55,7 +60,7 @@ function filterButtons(value) {
 }
 
 
-// ⌨️ ENTER KEY + LIVE SEARCH
+// ⌨️ LIVE SEARCH + ENTER SUPPORT
 document.addEventListener("DOMContentLoaded", function () {
     let input = document.getElementById("searchInput");
 
@@ -71,3 +76,27 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
+
+
+// 📤 SHARE FUNCTION (optional – safe)
+function shareLink(event, link) {
+    event.stopPropagation();
+
+    if (navigator.share) {
+        navigator.share({
+            title: "Check this out",
+            url: link
+        });
+    } else {
+        navigator.clipboard.writeText(link);
+
+        let popup = document.getElementById("popup");
+        if (popup) {
+            popup.style.display = "block";
+
+            setTimeout(() => {
+                popup.style.display = "none";
+            }, 2000);
+        }
+    }
+}
