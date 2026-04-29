@@ -17,10 +17,9 @@ function showSection(id) {
 }
 
 
-// 🔙 BACK FUNCTION (NO JUMP PERFECT FIX)
+// 🔙 BACK FUNCTION (NO JUMP ULTRA FIX)
 function goBack() {
 
-    // ✅ GET SCROLL POSITION FIRST
     let scrollPos = sessionStorage.getItem("scrollPos");
 
     let sections = document.querySelectorAll('[id^="section"]');
@@ -34,11 +33,18 @@ function goBack() {
         main.style.display = 'block';
     }
 
-    // ✅ RESTORE SCROLL WITHOUT JUMP (IMPORTANT)
+    // 🔥 CRITICAL FIX (NO JUMP)
     if (scrollPos !== null) {
-        requestAnimationFrame(() => {
-            window.scrollTo(0, parseInt(scrollPos));
-        });
+
+        // temporarily disable smooth scroll if any
+        document.documentElement.style.scrollBehavior = "auto";
+
+        window.scrollTo(0, parseInt(scrollPos));
+
+        // restore smooth scroll (optional)
+        setTimeout(() => {
+            document.documentElement.style.scrollBehavior = "smooth";
+        }, 0);
     }
 }
 
