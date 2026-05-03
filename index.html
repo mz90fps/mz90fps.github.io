@@ -142,78 +142,81 @@ body {
 
 
 
-
-<!-- 🔥 MENU ICON -->
+<!-- MENU ICON -->
 <div class="menu-icon" onclick="openMenu()">
   <span></span>
   <span></span>
   <span></span>
 </div>
 
-<!-- 🔥 OVERLAY -->
+<!-- OVERLAY -->
 <div id="overlay" onclick="closeMenu()"></div>
 
-<!-- 🔥 SIDE MENU -->
+<!-- SIDE MENU -->
 <div id="sideMenu">
 
-  <!-- ❌ CLOSE BUTTON (RIGHT SIDE CSS handle cheyyum) -->
   <div class="close-btn" onclick="closeMenu()">✕</div>
 
-  <!-- 🏠 HOME -->
+  <!-- HOME -->
   <div class="menu-item" onclick="location.reload()">Home</div>
 
-  <!-- 📦 PRODUCTS -->
+  <!-- PRODUCTS -->
   <div class="menu-item" onclick="toggleDropdown('productsDrop')">
-    Products <span class="arrow">▼</span>
+    Products ▼
   </div>
 
   <div id="productsDrop" class="dropdown">
 
     <!-- LED -->
-    <div onclick="toggleDropdown('ledDrop')">LED Lights ▼</div>
+    <div onclick="toggleDropdown('ledDrop'); event.stopPropagation()">LED Lights ▼</div>
     <div id="ledDrop" class="dropdown">
-      <div onclick="showSection('section8'); closeMenu()">Wall Light</div>
+      <div onclick="event.stopPropagation(); showSection('section8'); closeMenu()">Wall Light</div>
     </div>
 
-    <!-- CONTROLLERS -->
-    <div onclick="toggleDropdown('controllerDrop')">Controllers ▼</div>
+    <!-- CONTROLLER -->
+    <div onclick="toggleDropdown('controllerDrop'); event.stopPropagation()">Controllers ▼</div>
     <div id="controllerDrop" class="dropdown">
-      <div onclick="showSection('section3'); closeMenu()">Gaming Controller</div>
+      <div onclick="event.stopPropagation(); showSection('section3'); closeMenu()">Gaming Controller</div>
     </div>
 
-    <!-- MOUSES -->
-    <div onclick="toggleDropdown('mouseDrop')">Mouses ▼</div>
+    <!-- MOUSE -->
+    <div onclick="toggleDropdown('mouseDrop'); event.stopPropagation()">Mouses ▼</div>
     <div id="mouseDrop" class="dropdown">
-      <div onclick="showSection('section4'); closeMenu()">Gaming Mouse</div>
+      <div onclick="event.stopPropagation(); showSection('section4'); closeMenu()">Gaming Mouse</div>
     </div>
 
-    <!-- KEYBOARDS -->
-    <div onclick="toggleDropdown('keyboardDrop')">Keyboards ▼</div>
+    <!-- KEYBOARD -->
+    <div onclick="toggleDropdown('keyboardDrop'); event.stopPropagation()">Keyboards ▼</div>
     <div id="keyboardDrop" class="dropdown">
-      <div onclick="showSection('section11'); closeMenu()">Keyboard</div>
+      <div onclick="event.stopPropagation(); showSection('section11'); closeMenu()">Keyboard</div>
     </div>
 
     <!-- LAPTOP -->
-    <div onclick="toggleDropdown('laptopDrop')">Laptop Accessories ▼</div>
+    <div onclick="toggleDropdown('laptopDrop'); event.stopPropagation()">Laptop Accessories ▼</div>
     <div id="laptopDrop" class="dropdown">
-      <div onclick="showSection('section10'); closeMenu()">Laptop Stand</div>
+      <div onclick="event.stopPropagation(); showSection('section10'); closeMenu()">Laptop Stand</div>
     </div>
 
-    <!-- OTHERS -->
-    <div onclick="toggleDropdown('otherDrop')">Others ▼</div>
+    <!-- OTHER -->
+    <div onclick="toggleDropdown('otherDrop'); event.stopPropagation()">Others ▼</div>
     <div id="otherDrop" class="dropdown">
-      <div onclick="showSection('section12'); closeMenu()">Desk</div>
+      <div onclick="event.stopPropagation(); showSection('section12'); closeMenu()">Desk</div>
     </div>
 
   </div>
 
-  <!-- 🖼️ WALLPAPERS -->
+  <!-- WALLPAPERS -->
   <div class="menu-item" onclick="showSection('section2'); closeMenu()">
     Wallpapers
   </div>
 
 </div>
-     
+
+
+
+
+
+
 
 
      
