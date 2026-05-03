@@ -141,81 +141,57 @@ body {
 
 
 
-
-<!-- ☰ MENU ICON -->
 <div class="menu-icon" onclick="openMenu()">☰</div>
 
-<!-- OVERLAY -->
 <div id="overlay" onclick="closeMenu()"></div>
 
-<!-- SIDE MENU -->
 <div id="sideMenu">
+  <div class="close-btn" onclick="closeMenu()">✕</div>
 
-    <div class="close-btn" onclick="closeMenu()">✕</div>
+  <div class="menu-item" onclick="location.reload()">Home</div>
 
-    <ul>
+  <div class="menu-item" onclick="toggleDropdown('productsDrop')">
+    Products <span class="arrow">▼</span>
+  </div>
 
-        <!-- HOME -->
-        <li onclick="showSection('main'); closeMenu()">Home</li>
+  <div id="productsDrop" class="dropdown">
 
-        <!-- PRODUCTS -->
-        <li onclick="toggleDropdown('products')">
-            Products <span class="arrow">▼</span>
-        </li>
+    <div onclick="toggleDropdown('ledDrop')">LED Lights ▼</div>
+    <div id="ledDrop" class="dropdown">
+      <div onclick="showSection('section8'); closeMenu()">Wall Light</div>
+    </div>
 
-        <ul id="products" class="dropdown">
+    <div onclick="toggleDropdown('controllerDrop')">Controllers ▼</div>
+    <div id="controllerDrop" class="dropdown">
+      <div onclick="showSection('section3'); closeMenu()">Gaming Controller</div>
+    </div>
 
-            <!-- LED LIGHTS -->
-            <li onclick="toggleDropdown('led')">LED Lights ▼</li>
-            <ul id="led" class="sub-dropdown">
+    <div onclick="toggleDropdown('mouseDrop')">Mouses ▼</div>
+    <div id="mouseDrop" class="dropdown">
+      <div onclick="showSection('section4'); closeMenu()">AJAZZ Mouse</div>
+      <div onclick="showSection('section5'); closeMenu()">Cyberart Mouse</div>
+    </div>
 
-                <!-- 👉 IMPORTANT (NINTE STYLE) -->
-                <li onclick="showSection('section8'); closeMenu()">Wall Light</li>
-                <li onclick="showSection('section9'); closeMenu()">RGB Light</li>
+    <div onclick="toggleDropdown('keyboardDrop')">Keyboards ▼</div>
+    <div id="keyboardDrop" class="dropdown">
+      <div onclick="showSection('section11'); closeMenu()">Kreo Keyboard</div>
+    </div>
 
-            </ul>
+    <div onclick="toggleDropdown('laptopDrop')">Laptop Accessories ▼</div>
+    <div id="laptopDrop" class="dropdown">
+      <div onclick="showSection('section10'); closeMenu()">Laptop Stand</div>
+    </div>
 
-            <!-- CONTROLLERS -->
-            <li onclick="toggleDropdown('controller')">Controllers ▼</li>
-            <ul id="controller" class="sub-dropdown">
-                <li onclick="showSection('section3'); closeMenu()">Controller</li>
-            </ul>
+    <div onclick="toggleDropdown('otherDrop')">Others ▼</div>
+    <div id="otherDrop" class="dropdown">
+      <div onclick="showSection('section12'); closeMenu()">Desk</div>
+    </div>
 
-            <!-- MOUSE -->
-            <li onclick="toggleDropdown('mouse')">Mouses ▼</li>
-            <ul id="mouse" class="sub-dropdown">
-                <li onclick="showSection('section4'); closeMenu()">Gaming Mouse</li>
-            </ul>
+  </div>
 
-            <!-- KEYBOARD -->
-            <li onclick="toggleDropdown('keyboard')">Keyboards ▼</li>
-            <ul id="keyboard" class="sub-dropdown">
-                <li onclick="showSection('section5'); closeMenu()">Keyboard</li>
-            </ul>
-
-            <!-- LAPTOP -->
-            <li onclick="toggleDropdown('laptop')">Laptop Accessories ▼</li>
-            <ul id="laptop" class="sub-dropdown">
-                <li onclick="showSection('section6'); closeMenu()">Cooling Pad</li>
-                <li onclick="showSection('section7'); closeMenu()">Laptop Stand</li>
-            </ul>
-
-            <!-- OTHERS -->
-            <li onclick="toggleDropdown('others')">Others ▼</li>
-            <ul id="others" class="sub-dropdown">
-                <li onclick="showSection('section10'); closeMenu()">Other</li>
-            </ul>
-
-        </ul>
-
-        <!-- WALLPAPER -->
-        <li onclick="showSection('section2'); closeMenu()">Wallpapers</li>
-
-    </ul>
+  <div class="menu-item" onclick="showSection('section2'); closeMenu()">Wallpapers</div>
 
 </div>
-
-
 
      
 
