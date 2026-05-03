@@ -138,6 +138,89 @@ body {
 
 <body>
 
+
+
+
+
+<!-- ☰ MENU ICON -->
+<div class="menu-icon" onclick="openMenu()">☰</div>
+
+<!-- OVERLAY -->
+<div id="overlay" onclick="closeMenu()"></div>
+
+<!-- SIDE MENU -->
+<div id="sideMenu">
+
+    <div class="close-btn" onclick="closeMenu()">✕</div>
+
+    <ul>
+
+        <!-- HOME -->
+        <li onclick="showSection('main'); closeMenu()">Home</li>
+
+        <!-- PRODUCTS -->
+        <li onclick="toggleDropdown('products')">
+            Products <span class="arrow">▼</span>
+        </li>
+
+        <ul id="products" class="dropdown">
+
+            <!-- LED LIGHTS -->
+            <li onclick="toggleDropdown('led')">LED Lights ▼</li>
+            <ul id="led" class="sub-dropdown">
+
+                <!-- 👉 IMPORTANT (NINTE STYLE) -->
+                <li onclick="showSection('section8'); closeMenu()">Wall Light</li>
+                <li onclick="showSection('section9'); closeMenu()">RGB Light</li>
+
+            </ul>
+
+            <!-- CONTROLLERS -->
+            <li onclick="toggleDropdown('controller')">Controllers ▼</li>
+            <ul id="controller" class="sub-dropdown">
+                <li onclick="showSection('section3'); closeMenu()">Controller</li>
+            </ul>
+
+            <!-- MOUSE -->
+            <li onclick="toggleDropdown('mouse')">Mouses ▼</li>
+            <ul id="mouse" class="sub-dropdown">
+                <li onclick="showSection('section4'); closeMenu()">Gaming Mouse</li>
+            </ul>
+
+            <!-- KEYBOARD -->
+            <li onclick="toggleDropdown('keyboard')">Keyboards ▼</li>
+            <ul id="keyboard" class="sub-dropdown">
+                <li onclick="showSection('section5'); closeMenu()">Keyboard</li>
+            </ul>
+
+            <!-- LAPTOP -->
+            <li onclick="toggleDropdown('laptop')">Laptop Accessories ▼</li>
+            <ul id="laptop" class="sub-dropdown">
+                <li onclick="showSection('section6'); closeMenu()">Cooling Pad</li>
+                <li onclick="showSection('section7'); closeMenu()">Laptop Stand</li>
+            </ul>
+
+            <!-- OTHERS -->
+            <li onclick="toggleDropdown('others')">Others ▼</li>
+            <ul id="others" class="sub-dropdown">
+                <li onclick="showSection('section10'); closeMenu()">Other</li>
+            </ul>
+
+        </ul>
+
+        <!-- WALLPAPER -->
+        <li onclick="showSection('section2'); closeMenu()">Wallpapers</li>
+
+    </ul>
+
+</div>
+
+
+
+     
+
+     
+
 <h1 style="position:absolute; left:-9999px;">MZ90FPS</h1>
 
 <div id="searchIcon" onclick="openSearch()">🔍</div>
