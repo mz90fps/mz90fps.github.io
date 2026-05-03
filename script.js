@@ -1,7 +1,7 @@
 // 🔥 SHOW SECTION (handles all sections)
 function showSection(id) {
 
-    // ✅ SAVE SCROLL POSITION
+    // SAVE SCROLL POSITION
     sessionStorage.setItem("scrollPos", window.scrollY);
 
     let sections = document.querySelectorAll('[id^="section"], #main');
@@ -17,7 +17,7 @@ function showSection(id) {
 }
 
 
-// 🔙 BACK FUNCTION (NO JUMP ULTRA FIX)
+// 🔙 BACK FUNCTION (NO JUMP FIX)
 function goBack() {
 
     let scrollPos = sessionStorage.getItem("scrollPos");
@@ -43,7 +43,7 @@ function goBack() {
 }
 
 
-// 🔗 OPEN LINK (new tab)
+// 🔗 OPEN LINK
 function openLink(url) {
     window.open(url, "_blank");
 }
@@ -134,24 +134,37 @@ function shareLink(event, link) {
 
 
 /* =========================
-   🔥 NEW MENU FUNCTIONS
+   🔥 MENU FUNCTIONS (FIXED)
 ========================= */
 
 // OPEN MENU
 function openMenu() {
-    document.getElementById("sideMenu").classList.add("open");
-    document.getElementById("overlay").style.display = "block";
+    let menu = document.getElementById("sideMenu");
+    let overlay = document.getElementById("overlay");
+
+    if (menu) menu.classList.add("open");
+    if (overlay) overlay.style.display = "block";
+
+    // 🔥 prevent background scroll
+    document.body.style.overflow = "hidden";
 }
 
 // CLOSE MENU
 function closeMenu() {
-    document.getElementById("sideMenu").classList.remove("open");
-    document.getElementById("overlay").style.display = "none";
+    let menu = document.getElementById("sideMenu");
+    let overlay = document.getElementById("overlay");
+
+    if (menu) menu.classList.remove("open");
+    if (overlay) overlay.style.display = "none";
+
+    document.body.style.overflow = "auto";
 }
 
 // TOGGLE DROPDOWN
 function toggleDropdown(id) {
     let el = document.getElementById(id);
+
+    if (!el) return;
 
     if (el.style.display === "block") {
         el.style.display = "none";
