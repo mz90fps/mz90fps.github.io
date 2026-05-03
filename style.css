@@ -1,61 +1,61 @@
-/* BASE */
+/* ===== BASIC ===== */
+html { scroll-behavior: smooth; }
+
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
   background: #e8d8c3;
+  text-align: center;
+  color: #111;
 }
 
-/* 🔥 MENU ICON */
+/* ===== MENU ICON (3 line) ===== */
 .menu-icon {
-  position: fixed !important;
+  position: fixed;
   top: 12px;
   left: 12px;
   width: 22px;
   height: 18px;
+  z-index: 9999;
   cursor: pointer;
-  z-index: 3000;
 }
 
 .menu-icon span {
   display: block;
-  height: 2.5px;
+  height: 2px;
   background: #111;
   margin: 4px 0;
+  border-radius: 2px;
 }
 
-.menu-icon.hide {
-  display: none;
-}
-
-/* 🔥 OVERLAY */
+/* ===== OVERLAY ===== */
 #overlay {
   position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   background: rgba(0,0,0,0.3);
   display: none;
-  z-index: 1500;
+  z-index: 999;
 }
 
-/* 🔥 SIDE MENU */
+/* ===== SIDE MENU ===== */
 #sideMenu {
   position: fixed;
   top: 0;
   left: -100%;
   width: 80%;
-  max-width: 300px;
   height: 100%;
   background: #e8d8c3;
-  transition: 0.3s;
-  z-index: 2000;
+  transition: 0.3s ease;
+  z-index: 1000;
   padding: 20px;
+  box-sizing: border-box;
+  text-align: left;
 }
 
-#sideMenu.open {
-  left: 0;
-}
-
-/* 🔥 CLOSE BUTTON */
+/* ===== CLOSE BUTTON ===== */
 .close-btn {
   position: absolute;
   top: 15px;
@@ -64,21 +64,29 @@ body {
   cursor: pointer;
 }
 
-/* MENU ITEM */
+/* ===== MENU ITEMS ===== */
 .menu-item {
-  padding: 12px;
+  padding: 14px 0;
   border-bottom: 1px solid rgba(0,0,0,0.1);
+  font-size: 16px;
   cursor: pointer;
-  text-align: left;
 }
 
-/* DROPDOWN */
+/* ===== DROPDOWN ===== */
 .dropdown {
   display: none;
   padding-left: 15px;
 }
 
 .dropdown div {
-  padding: 8px;
+  padding: 10px 0;
+  font-size: 14px;
   cursor: pointer;
+}
+
+/* ===== SMALL FIX (image zoom issue prevent) ===== */
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
 }
