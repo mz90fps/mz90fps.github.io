@@ -9,17 +9,24 @@ body {
   color: #111;
 }
 
-/* ==== MENU ICON (3 lines) ==== */
+/* ==== MENU ICON (3 lines FIXED) ==== */
 .menu-icon {
   position: fixed;
   top: 15px;
   left: 15px;
-  font-size: 26px;
+  width: 30px;
+  height: 22px;
   cursor: pointer;
   z-index: 1001;
+}
 
-  color: #111;          /* 🔥 FIX (IMPORTANT) */
-  font-weight: bold;    /* 🔥 better visibility */
+/* 🔥 IMPORTANT: LINES */
+.menu-icon span {
+  display: block;
+  height: 3px;
+  background: #111;
+  margin: 5px 0;
+  border-radius: 2px;
 }
 
 /* ==== OVERLAY ==== */
