@@ -1,61 +1,65 @@
-// ===== MENU =====
+// =====================
+// 🔥 SECTION CONTROL
+// =====================
+function showSection(id) {
+    let sections = document.querySelectorAll('[id^="section"], #main');
+
+    sections.forEach(sec => {
+        sec.style.display = 'none';
+    });
+
+    let active = document.getElementById(id);
+    if (active) {
+        active.style.display = 'block';
+    }
+}
+
+// =====================
+// 🔥 MENU
+// =====================
 function openMenu() {
-    let menu = document.getElementById("sideMenu");
-    let overlay = document.getElementById("overlay");
-
-    menu.classList.add("open");
-    overlay.style.display = "block";
-
+    document.getElementById("sideMenu").classList.add("open");
+    document.getElementById("overlay").style.display = "block";
     document.querySelector(".menu-icon").classList.add("hide");
     document.body.style.overflow = "hidden";
 }
 
 function closeMenu() {
-    let menu = document.getElementById("sideMenu");
-    let overlay = document.getElementById("overlay");
-
-    menu.classList.remove("open");
-    overlay.style.display = "none";
-
+    document.getElementById("sideMenu").classList.remove("open");
+    document.getElementById("overlay").style.display = "none";
     document.querySelector(".menu-icon").classList.remove("hide");
     document.body.style.overflow = "auto";
 }
 
-// ===== DROPDOWN (FIXED) =====
+// =====================
+// 🔥 DROPDOWN FIX (IMPORTANT)
+// =====================
 function toggleDropdown(id) {
     let el = document.getElementById(id);
 
     if (!el) return;
 
-    let isOpen = el.style.display === "block";
-
-    // close all dropdowns first
-    document.querySelectorAll(".dropdown").forEach(d => d.style.display = "none");
-
-    if (!isOpen) {
+    if (el.style.display === "block") {
+        el.style.display = "none";
+    } else {
         el.style.display = "block";
     }
 }
 
-// ===== SEARCH =====
+// =====================
+// 🔍 SEARCH
+// =====================
 function openSearch() {
-    let bar = document.getElementById("searchBar");
-    let closeBtn = document.getElementById("closeSearch");
-
-    bar.style.display = "block";
-    closeBtn.style.display = "block";
+    document.getElementById("searchBar").style.display = "block";
+    document.getElementById("closeSearch").style.display = "block";
 
     document.querySelector(".menu-icon").classList.add("hide");
 }
 
 function closeSearch() {
-    let bar = document.getElementById("searchBar");
-    let closeBtn = document.getElementById("closeSearch");
-    let input = document.getElementById("searchInput");
-
-    bar.style.display = "none";
-    closeBtn.style.display = "none";
-    input.value = "";
+    document.getElementById("searchBar").style.display = "none";
+    document.getElementById("closeSearch").style.display = "none";
+    document.getElementById("searchInput").value = "";
 
     document.querySelector(".menu-icon").classList.remove("hide");
 }
