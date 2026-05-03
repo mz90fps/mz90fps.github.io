@@ -1,174 +1,51 @@
-// 🔥 SHOW SECTION (handles all sections)
-function showSection(id) {
+// ===== MENU =====
+function openMenu() {
+    let menu = document.getElementById("sideMenu");
+    let overlay = document.getElementById("overlay");
 
-    // SAVE SCROLL POSITION
-    sessionStorage.setItem("scrollPos", window.scrollY);
+    menu.classList.add("open");
+    overlay.style.display = "block";
 
-    let sections = document.querySelectorAll('[id^="section"], #main');
+    // 🔥 hide menu icon
+    document.querySelector(".menu-icon").classList.add("hide");
 
-    sections.forEach(sec => {
-        sec.style.display = 'none';
-    });
-
-    let active = document.getElementById(id);
-    if (active) {
-        active.style.display = 'block';
-    }
+    document.body.style.overflow = "hidden";
 }
 
+function closeMenu() {
+    let menu = document.getElementById("sideMenu");
+    let overlay = document.getElementById("overlay");
 
-// 🔙 BACK FUNCTION (NO JUMP FIX)
-function goBack() {
+    menu.classList.remove("open");
+    overlay.style.display = "none";
 
-    let scrollPos = sessionStorage.getItem("scrollPos");
+    // 🔥 show menu icon back
+    document.querySelector(".menu-icon").classList.remove("hide");
 
-    let sections = document.querySelectorAll('[id^="section"]');
-
-    sections.forEach(sec => {
-        sec.style.display = 'none';
-    });
-
-    let main = document.getElementById("main");
-    if (main) {
-        main.style.display = 'block';
-    }
-
-    if (scrollPos !== null) {
-        document.documentElement.style.scrollBehavior = "auto";
-        window.scrollTo(0, parseInt(scrollPos));
-        setTimeout(() => {
-            document.documentElement.style.scrollBehavior = "smooth";
-        }, 0);
-    }
+    document.body.style.overflow = "auto";
 }
 
-
-// 🔗 OPEN LINK
-function openLink(url) {
-    window.open(url, "_blank");
-}
-
-
-// 🔍 SEARCH OPEN
+// ===== SEARCH =====
 function openSearch() {
     let bar = document.getElementById("searchBar");
     let closeBtn = document.getElementById("closeSearch");
-    let input = document.getElementById("searchInput");
 
-    if (bar) bar.style.display = "block";
-    if (closeBtn) closeBtn.style.display = "block";
-    if (input) input.focus();
+    bar.style.display = "block";
+    closeBtn.style.display = "block";
+
+    // 🔥 hide menu icon
+    document.querySelector(".menu-icon").classList.add("hide");
 }
 
-
-// ❌ SEARCH CLOSE
 function closeSearch() {
     let bar = document.getElementById("searchBar");
     let closeBtn = document.getElementById("closeSearch");
     let input = document.getElementById("searchInput");
 
-    if (bar) bar.style.display = "none";
-    if (closeBtn) closeBtn.style.display = "none";
-    if (input) input.value = "";
+    bar.style.display = "none";
+    closeBtn.style.display = "none";
+    input.value = "";
 
-    filterButtons("");
-}
-
-
-// 🔎 FILTER BUTTONS
-function filterButtons(value) {
-    let buttons = document.querySelectorAll(".btn");
-
-    buttons.forEach(btn => {
-        let text = btn.innerText.toLowerCase();
-
-        if (text.includes(value)) {
-            btn.style.display = "flex";
-        } else {
-            btn.style.display = "none";
-        }
-    });
-}
-
-
-// ⌨️ LIVE SEARCH
-document.addEventListener("DOMContentLoaded", function () {
-    let input = document.getElementById("searchInput");
-
-    if (input) {
-        input.addEventListener("input", function () {
-            filterButtons(this.value.toLowerCase());
-        });
-
-        input.addEventListener("keypress", function (e) {
-            if (e.key === "Enter") {
-                filterButtons(this.value.toLowerCase());
-            }
-        });
-    }
-});
-
-
-// 📤 SHARE FUNCTION
-function shareLink(event, link) {
-    event.stopPropagation();
-
-    if (navigator.share) {
-        navigator.share({
-            title: "Check this out",
-            url: link
-        });
-    } else {
-        navigator.clipboard.writeText(link);
-
-        let popup = document.getElementById("popup");
-        if (popup) {
-            popup.style.display = "block";
-
-            setTimeout(() => {
-                popup.style.display = "none";
-            }, 2000);
-        }
-    }
-}
-
-
-/* =========================
-   🔥 MENU FUNCTIONS (FIXED)
-========================= */
-
-// OPEN MENU
-function openMenu() {
-    let menu = document.getElementById("sideMenu");
-    let overlay = document.getElementById("overlay");
-
-    if (menu) menu.classList.add("open");
-    if (overlay) overlay.style.display = "block";
-
-    // 🔥 prevent background scroll
-    document.body.style.overflow = "hidden";
-}
-
-// CLOSE MENU
-function closeMenu() {
-    let menu = document.getElementById("sideMenu");
-    let overlay = document.getElementById("overlay");
-
-    if (menu) menu.classList.remove("open");
-    if (overlay) overlay.style.display = "none";
-
-    document.body.style.overflow = "auto";
-}
-
-// TOGGLE DROPDOWN
-function toggleDropdown(id) {
-    let el = document.getElementById(id);
-
-    if (!el) return;
-
-    if (el.style.display === "block") {
-        el.style.display = "none";
-    } else {
-        el.style.display = "block";
-    }
+    // 🔥 show menu icon back
+    document.querySelector(".menu-icon").classList.remove("hide");
 }
