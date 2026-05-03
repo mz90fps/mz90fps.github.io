@@ -1,15 +1,11 @@
-/* ==== BASE ==== */
-html { scroll-behavior: smooth; }
-
+/* BASE */
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
   background: #e8d8c3;
-  text-align: center;
-  color: #111;
 }
 
-/* 🔥 MENU ICON (SMALL + FIXED) */
+/* 🔥 MENU ICON */
 .menu-icon {
   position: fixed !important;
   top: 12px;
@@ -25,19 +21,15 @@ body {
   height: 2.5px;
   background: #111;
   margin: 4px 0;
-  border-radius: 2px;
 }
 
-/* 🔥 HIDE */
 .menu-icon.hide {
   display: none;
 }
 
-/* OVERLAY */
+/* 🔥 OVERLAY */
 #overlay {
   position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
   background: rgba(0,0,0,0.3);
@@ -54,33 +46,30 @@ body {
   max-width: 300px;
   height: 100%;
   background: #e8d8c3;
-  box-shadow: 2px 0 15px rgba(0,0,0,0.2);
+  transition: 0.3s;
+  z-index: 2000;
   padding: 20px;
-  transition: left 0.3s ease;
-  z-index: 1600;
-  overflow-y: auto;
 }
 
 #sideMenu.open {
   left: 0;
 }
 
-/* 🔥 CLOSE BUTTON RIGHT */
+/* 🔥 CLOSE BUTTON */
 .close-btn {
-  font-size: 24px;
-  cursor: pointer;
   position: absolute;
   top: 15px;
   right: 20px;
+  font-size: 22px;
+  cursor: pointer;
 }
 
-/* MENU ITEMS */
+/* MENU ITEM */
 .menu-item {
-  padding: 12px 5px;
-  font-size: 16px;
+  padding: 12px;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
   cursor: pointer;
   text-align: left;
-  border-bottom: 1px solid rgba(0,0,0,0.05);
 }
 
 /* DROPDOWN */
@@ -90,7 +79,6 @@ body {
 }
 
 .dropdown div {
-  padding: 8px 0;
-  font-size: 14px;
+  padding: 8px;
   cursor: pointer;
 }
