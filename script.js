@@ -1,43 +1,60 @@
-// =====================
-// 🔥 SECTION CONTROL
-// =====================
+// ============================
+// SECTION SYSTEM (IMPORTANT)
+// ============================
+
 function showSection(id) {
-    let sections = document.querySelectorAll('[id^="section"], #main');
+    // save scroll position
+    sessionStorage.setItem("scrollPos", window.scrollY);
 
-    sections.forEach(sec => {
-        sec.style.display = 'none';
-    });
+    // hide main
+    document.getElementById("main").style.display = "none";
 
-    let active = document.getElementById(id);
-    if (active) {
-        active.style.display = 'block';
+    // hide all sections
+    let sections = document.querySelectorAll(".section");
+    sections.forEach(sec => sec.style.display = "none");
+
+    // show selected
+    document.getElementById(id).style.display = "block";
+
+    // scroll top (section view)
+    window.scrollTo(0, 0);
+}
+
+function goBack() {
+    document.getElementById("main").style.display = "block";
+
+    let sections = document.querySelectorAll(".section");
+    sections.forEach(sec => sec.style.display = "none");
+
+    // restore scroll position
+    let pos = sessionStorage.getItem("scrollPos");
+    if (pos) {
+        window.scrollTo(0, pos);
     }
 }
 
-// =====================
-// 🔥 MENU
-// =====================
+// ============================
+// MENU SYSTEM
+// ============================
+
 function openMenu() {
-    document.getElementById("sideMenu").classList.add("open");
+    document.getElementById("sideMenu").style.left = "0";
     document.getElementById("overlay").style.display = "block";
-    document.querySelector(".menu-icon").classList.add("hide");
-    document.body.style.overflow = "hidden";
+    document.querySelector(".menu-icon").style.display = "none";
 }
 
 function closeMenu() {
-    document.getElementById("sideMenu").classList.remove("open");
+    document.getElementById("sideMenu").style.left = "-100%";
     document.getElementById("overlay").style.display = "none";
-    document.querySelector(".menu-icon").classList.remove("hide");
-    document.body.style.overflow = "auto";
+    document.querySelector(".menu-icon").style.display = "block";
 }
 
-// =====================
-// 🔥 DROPDOWN FIX (IMPORTANT)
-// =====================
+// ============================
+// DROPDOWN MENU
+// ============================
+
 function toggleDropdown(id) {
     let el = document.getElementById(id);
-
-    if (!el) return;
 
     if (el.style.display === "block") {
         el.style.display = "none";
@@ -46,20 +63,40 @@ function toggleDropdown(id) {
     }
 }
 
-// =====================
-// 🔍 SEARCH
-// =====================
+// ============================
+// SEARCH SYSTEM
+// ============================
+
 function openSearch() {
     document.getElementById("searchBar").style.display = "block";
-    document.getElementById("closeSearch").style.display = "block";
+    document.getElementById("searchIcon").style.display = "none";
 
-    document.querySelector(".menu-icon").classList.add("hide");
+    // hide menu icon while searching
+    document.querySelector(".menu-icon").style.display = "none";
 }
 
 function closeSearch() {
     document.getElementById("searchBar").style.display = "none";
-    document.getElementById("closeSearch").style.display = "none";
-    document.getElementById("searchInput").value = "";
+    document.getElementById("searchIcon").style.display = "block";
 
-    document.querySelector(".menu-icon").classList.remove("hide");
+    // show menu icon back
+    document.querySelector(".menu-icon").style.display = "block";
+}
+
+// ============================
+// SHARE FUNCTION
+// ============================
+
+function shareLink(event, url) {
+    event.stopPropagation();
+
+    if (navigator.share) {
+        navigator.share({
+            title: "Check this product",
+            url: url
+        });
+    } else {
+        navigator.clipboard.writeText(url);
+        alert("Link copied!");
+    }
 }
