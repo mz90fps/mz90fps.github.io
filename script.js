@@ -33,15 +33,9 @@ function goBack() {
         main.style.display = 'block';
     }
 
-    // 🔥 CRITICAL FIX (NO JUMP)
     if (scrollPos !== null) {
-
-        // temporarily disable smooth scroll if any
         document.documentElement.style.scrollBehavior = "auto";
-
         window.scrollTo(0, parseInt(scrollPos));
-
-        // restore smooth scroll (optional)
         setTimeout(() => {
             document.documentElement.style.scrollBehavior = "smooth";
         }, 0);
@@ -55,7 +49,7 @@ function openLink(url) {
 }
 
 
-// 🔍 SEARCH OPEN (FIXED 🔥)
+// 🔍 SEARCH OPEN
 function openSearch() {
     let bar = document.getElementById("searchBar");
     let closeBtn = document.getElementById("closeSearch");
@@ -67,7 +61,7 @@ function openSearch() {
 }
 
 
-// ❌ SEARCH CLOSE (FIXED 🔥)
+// ❌ SEARCH CLOSE
 function closeSearch() {
     let bar = document.getElementById("searchBar");
     let closeBtn = document.getElementById("closeSearch");
@@ -81,7 +75,7 @@ function closeSearch() {
 }
 
 
-// 🔎 FILTER BUTTONS (live search)
+// 🔎 FILTER BUTTONS
 function filterButtons(value) {
     let buttons = document.querySelectorAll(".btn");
 
@@ -97,7 +91,7 @@ function filterButtons(value) {
 }
 
 
-// ⌨️ LIVE SEARCH + ENTER SUPPORT
+// ⌨️ LIVE SEARCH
 document.addEventListener("DOMContentLoaded", function () {
     let input = document.getElementById("searchInput");
 
@@ -115,7 +109,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-// 📤 SHARE FUNCTION (safe)
+// 📤 SHARE FUNCTION
 function shareLink(event, link) {
     event.stopPropagation();
 
@@ -135,5 +129,33 @@ function shareLink(event, link) {
                 popup.style.display = "none";
             }, 2000);
         }
+    }
+}
+
+
+/* =========================
+   🔥 NEW MENU FUNCTIONS
+========================= */
+
+// OPEN MENU
+function openMenu() {
+    document.getElementById("sideMenu").classList.add("open");
+    document.getElementById("overlay").style.display = "block";
+}
+
+// CLOSE MENU
+function closeMenu() {
+    document.getElementById("sideMenu").classList.remove("open");
+    document.getElementById("overlay").style.display = "none";
+}
+
+// TOGGLE DROPDOWN
+function toggleDropdown(id) {
+    let el = document.getElementById(id);
+
+    if (el.style.display === "block") {
+        el.style.display = "none";
+    } else {
+        el.style.display = "block";
     }
 }
