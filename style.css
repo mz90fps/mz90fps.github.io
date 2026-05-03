@@ -17,6 +17,9 @@ body {
   font-size: 26px;
   cursor: pointer;
   z-index: 1001;
+
+  color: #111;          /* 🔥 FIX (IMPORTANT) */
+  font-weight: bold;    /* 🔥 better visibility */
 }
 
 /* ==== OVERLAY ==== */
