@@ -138,56 +138,62 @@ body {
 
 <body>
 
-
-<!-- MENU ICON -->
+<!-- ===== MENU ICON ===== -->
 <div class="menu-icon" onclick="openMenu()">
   <span></span>
   <span></span>
   <span></span>
 </div>
 
-<!-- OVERLAY -->
+<!-- ===== OVERLAY ===== -->
 <div id="overlay" onclick="closeMenu()"></div>
 
-<!-- SIDE MENU -->
+<!-- ===== SIDE MENU ===== -->
 <div id="sideMenu">
 
   <div class="close-btn" onclick="closeMenu()">✕</div>
 
+  <!-- HOME -->
   <div class="menu-item" onclick="location.reload()">Home</div>
 
+  <!-- PRODUCTS -->
   <div class="menu-item" onclick="toggleDropdown('productsDrop')">
     Products <span class="arrow">▼</span>
   </div>
 
   <div id="productsDrop" class="dropdown">
 
+    <!-- LED -->
     <div onclick="toggleDropdown('ledDrop')">LED Lights ▼</div>
     <div id="ledDrop" class="dropdown">
       <div onclick="showSection('section8'); closeMenu()">Wall Light</div>
     </div>
 
+    <!-- CONTROLLERS -->
     <div onclick="toggleDropdown('controllerDrop')">Controllers ▼</div>
     <div id="controllerDrop" class="dropdown">
       <div onclick="showSection('section3'); closeMenu()">Gaming Controller</div>
     </div>
 
+    <!-- MOUSE -->
     <div onclick="toggleDropdown('mouseDrop')">Mouses ▼</div>
     <div id="mouseDrop" class="dropdown">
-      <div onclick="showSection('section4'); closeMenu()">AJAZZ Mouse</div>
-      <div onclick="showSection('section5'); closeMenu()">Cyberart Mouse</div>
+      <div onclick="showSection('section4'); closeMenu()">Gaming Mouse</div>
     </div>
 
+    <!-- KEYBOARD -->
     <div onclick="toggleDropdown('keyboardDrop')">Keyboards ▼</div>
     <div id="keyboardDrop" class="dropdown">
       <div onclick="showSection('section11'); closeMenu()">Keyboard</div>
     </div>
 
+    <!-- LAPTOP -->
     <div onclick="toggleDropdown('laptopDrop')">Laptop Accessories ▼</div>
     <div id="laptopDrop" class="dropdown">
       <div onclick="showSection('section10'); closeMenu()">Laptop Stand</div>
     </div>
 
+    <!-- OTHERS -->
     <div onclick="toggleDropdown('otherDrop')">Others ▼</div>
     <div id="otherDrop" class="dropdown">
       <div onclick="showSection('section12'); closeMenu()">Desk</div>
@@ -195,12 +201,10 @@ body {
 
   </div>
 
+  <!-- WALLPAPERS -->
   <div class="menu-item" onclick="showSection('section2'); closeMenu()">Wallpapers</div>
 
 </div>
-
-
-
      
 
 <h1 style="position:absolute; left:-9999px;">MZ90FPS</h1>
