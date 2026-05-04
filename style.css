@@ -1,0 +1,144 @@
+/* ==== WALLPAPER SECTION STYLE ==== */
+#section2 {
+  padding: 20px;
+  animation: fadeIn 0.3s ease;
+}
+
+.wall-text {
+  max-width: 600px;
+  margin: 10px auto 25px auto;
+  line-height: 1.7;
+  font-size: 15px;
+  color: #222;
+  text-align: center;
+}
+
+#section2 h2 {
+  margin-bottom: 10px;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+#section2 .btn {
+  margin-top: 10px;
+  transition: 0.2s;
+}
+
+#section2 .btn:hover {
+  transform: scale(1.02);
+}
+
+/* ==== PRODUCT IMAGE STYLE ==== */
+.product-image {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.product-image img {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #d3c2aa;
+}
+
+/* ==== ANIMATION ==== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* ================== 🔥 MENU CSS ================== */
+
+.menu-icon {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  width: 24px;
+  height: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  z-index: 9999;
+}
+
+.menu-icon span {
+  height: 3px;
+  background: #000;
+  border-radius: 2px;
+}
+
+.overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.3);
+  top: 0;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s;
+}
+
+.overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translateX(-100%);
+  width: 260px;
+  height: 100%;
+  background: #d8c3a5;
+  padding: 20px;
+  box-sizing: border-box;
+  transition: 0.3s;
+  z-index: 9998;
+  overflow-y: auto;
+}
+
+.side-menu.active {
+  transform: translateX(0);
+}
+
+.close-btn {
+  text-align: right;
+  font-size: 20px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.menu-item {
+  padding: 12px 0;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.submenu {
+  display: none;
+  padding-left: 10px;
+}
+
+.submenu-inner {
+  display: none;
+  padding-left: 15px;
+  font-size: 14px;
+}
+
+.submenu div,
+.submenu-inner div {
+  padding: 8px 0;
+  cursor: pointer;
+}
