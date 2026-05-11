@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://mz90fps.github.io/sitemap.xml
