@@ -157,9 +157,9 @@ body {
   <div class="menu-item" onclick="goHome()">Home</div>
 
   <!-- PRODUCTS -->
-  <div class="menu-item" onclick="toggleSub('productsSub')">
-    Products ▼
-  </div>
+ <div class="menu-item" onclick="toggleSub('productsSub'); this.querySelector('.arrow').innerHTML = this.querySelector('.arrow').innerHTML == '▼' ? '▲' : '▼'">
+    Products <span class="arrow">▼</span>
+</div>
 
   <div class="submenu" id="productsSub">
 
@@ -173,43 +173,56 @@ body {
       <div onclick="showSection('section6')">RGB Neon Strip</div>
     </div>
 
-    <!-- CONTROLLERS -->
-    <div onclick="toggleSub('controllerSub')">Controllers ▼</div>
+
+<!-- CONTROLLERS -->
+<div onclick="toggleSub('controllerSub'); this.querySelector('.arrow').innerHTML = this.querySelector('.arrow').innerHTML == '▼' ? '▲' : '▼'">
+    Controllers <span class="arrow">▼</span>
+</div>
     <div class="submenu-inner" id="controllerSub">
       <div onclick="showSection('section3')">Kreo Mirage</div>
     </div>
 
 
-        <!-- Earphones-->
-    <div onclick="toggleSub('earphonesSub')">Earphones ▼</div>
+<!-- EARPHONES -->
+<div onclick="toggleSub('earphonesSub'); this.querySelector('.arrow').innerHTML = this.querySelector('.arrow').innerHTML == '▼' ? '▲' : '▼'">
+    Earphones <span class="arrow">▼</span>
+</div>
     <div class="submenu-inner" id="earphonesSub">
       <div onclick="showSection('section14')">Atk Horizon</div>
     </div>
 
        
-    <!-- MOUSE -->
-    <div onclick="toggleSub('mouseSub')">Mouses ▼</div>
+<!-- MOUSE -->
+<div onclick="toggleSub('mouseSub'); this.querySelector('.arrow').innerHTML = this.querySelector('.arrow').innerHTML == '▼' ? '▲' : '▼'">
+    Mouses <span class="arrow">▼</span>
+</div>
     <div class="submenu-inner" id="mouseSub">
       <div onclick="showSection('section4')">AJAZZ AJ200P</div>
       <div onclick="showSection('section5')">Cybeart Ghost</div>
     </div>
 
-    <!-- KEYBOARD -->
-    <div onclick="toggleSub('keyboardSub')">Keyboards ▼</div>
+<!-- KEYBOARD -->
+<div onclick="toggleSub('keyboardSub'); this.querySelector('.arrow').innerHTML = this.querySelector('.arrow').innerHTML == '▼' ? '▲' : '▼'">
+    Keyboards <span class="arrow">▼</span>
+</div>
     <div class="submenu-inner" id="keyboardSub">
       <div onclick="showSection('section13')">keysync keycap</div>
       <div onclick="showSection('section11')">Kreo Swarm 75%</div>
     </div>
 
-    <!-- LAPTOP -->
-    <div onclick="toggleSub('laptopSub')">Laptop Accessories ▼</div>
+<!-- LAPTOP -->
+<div onclick="toggleSub('laptopSub'); this.querySelector('.arrow').innerHTML = this.querySelector('.arrow').innerHTML == '▼' ? '▲' : '▼'">
+    Laptop Accessories <span class="arrow">▼</span>
+</div>
     <div class="submenu-inner" id="laptopSub">
       <div onclick="showSection('section9')">Cooling Pad</div>
       <div onclick="showSection('section10')">Laptop Stand</div>
     </div>
 
-    <!-- OTHERS -->
-    <div onclick="toggleSub('otherSub')">Others ▼</div>
+ <!-- OTHERS -->
+<div onclick="toggleSub('otherSub'); this.querySelector('.arrow').innerHTML = this.querySelector('.arrow').innerHTML == '▼' ? '▲' : '▼'">
+    Others <span class="arrow">▼</span>
+</div>
     <div class="submenu-inner" id="otherSub">
       <div onclick="showSection('section12')">Table for PC</div>
     </div>
