@@ -1,0 +1,1521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>MZ90FPS</title>
+
+
+
+
+     
+<meta name="description" content="MZ90FPS - Gaming setup, wallpapers, tech content and product links.">
+
+<link rel="icon" type="image/png" href="favicon.png">
+
+<link rel="stylesheet" href="style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "MZ90FPS",
+  "url": "https://mz90fps.github.io/",
+  "logo": "https://mz90fps.github.io/Logo.png"
+}
+</script>
+    
+<style>
+html { scroll-behavior: smooth; }
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #e8d8c3;
+    text-align: center;
+    color: #111;
+}
+
+/* SEARCH ICON */
+#searchIcon {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    font-size: 22px;
+    cursor: pointer;
+    z-index: 999;
+}
+
+/* SEARCH BAR */
+#searchBar {
+    display:none;
+    position:fixed;
+    top:10px;
+    left:10px;
+    right:60px;
+    z-index:1000;
+}
+
+#searchInput {
+    width:100%;
+    padding:15px;
+    border-radius:30px;
+    border:2px solid #111;
+    font-size:16px;
+}
+
+/* CLOSE BUTTON */
+#closeSearch {
+    position:fixed;
+    top:12px;
+    right:50px;
+    font-size:25px;
+    cursor:pointer;
+    display:none;
+    z-index:1001;
+}
+
+/* EXISTING */
+.profile img {
+    width:120px;height:120px;border-radius:50%;
+    margin-top:30px;object-fit:cover;
+}
+
+.name { font-size:28px;font-weight:bold;margin-top:10px; }
+.name img { width:20px;vertical-align:middle; }
+
+.bio { margin:15px;font-size:16px;line-height:1.6; }
+
+.social img {
+    width:30px;margin:10px;cursor:pointer;transition:0.2s;
+}
+.social img:hover { transform:scale(1.2); }
+
+.container { margin-top:20px;padding-bottom:20px; }
+
+/* ✅ FINAL PERFECT BUTTON */
+.btn {
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    background:#eadcc8;
+    border-radius:30px;
+    padding:12px 18px;
+    margin:12px auto;
+    width:85%; /* 🔥 PERFECT SIDE GAP */
+    max-width:500px;
+    cursor:pointer;
+    transition:0.3s;
+    border:1px solid #d3c2aa;
+}
+.btn:hover { background:#e0cfb8; }
+
+.left { display:flex;align-items:center; }
+.left img {
+    width:45px;height:45px;border-radius:50%;margin-right:15px;
+}
+
+.text { font-size:16px; }
+.dots { font-size:20px;cursor:pointer; }
+
+.footer {
+    margin-top:30px;margin-bottom:20px;
+    font-size:12px;opacity:0.6;
+}
+
+.popup {
+    position:fixed;bottom:20px;left:50%;
+    transform:translateX(-50%);
+    background:black;color:white;
+    padding:10px 20px;border-radius:20px;
+    display:none;
+}
+</style>
+</head>
+
+<body>
+
+<!-- 🔥 MENU ICON -->
+<div class="menu-icon" id="menuBtn" onclick="openMenu()">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+
+<!-- OVERLAY -->
+<div class="overlay" id="overlay" onclick="closeMenu()"></div>
+
+<!-- SIDE MENU -->
+<div class="side-menu" id="sideMenu">
+
+  <div class="close-btn" onclick="closeMenu()">✕</div>
+
+  <!-- HOME -->
+  <div class="menu-item" onclick="goHome()">Home</div>
+
+  <!-- PRODUCTS -->
+ <div class="menu-item" onclick="toggleSub('productsSub'); this.querySelector('.arrow').innerHTML = this.querySelector('.arrow').innerHTML == '▼' ? '▲' : '▼'">
+    Products <span class="arrow">▼</span>
+</div>
+
+  <div class="submenu" id="productsSub">
+
+    <!-- LED -->
+<div onclick="toggleSub('ledSub'); this.querySelector('.arrow').innerHTML = this.querySelector('.arrow').innerHTML == '▼' ? '▲' : '▼'">
+    LED Lights <span class="arrow">▼</span>
+</div>
+    <div class="submenu-inner" id="ledSub">
+      <div onclick="showSection('section8')">table stand light</div>
+      <div onclick="showSection('section7')">wall Light</div>
+      <div onclick="showSection('section6')">RGB neon Strip</div>
+            <div onclick="showSection('section6')">rgbic led strip</div>
+    </div>
+
+
+<!-- CONTROLLERS -->
+<div onclick="toggleSub('controllerSub'); this.querySelector('.arrow').innerHTML = this.querySelector('.arrow').innerHTML == '▼' ? '▲' : '▼'">
+    Controllers <span class="arrow">▼</span>
+</div>
+    <div class="submenu-inner" id="controllerSub">
+      <div onclick="showSection('section3')">kreo Mirage</div>
+    </div>
+
+
+<!-- EARPHONES -->
+<div onclick="toggleSub('earphonesSub'); this.querySelector('.arrow').innerHTML = this.querySelector('.arrow').innerHTML == '▼' ? '▲' : '▼'">
+    Earphones <span class="arrow">▼</span>
+</div>
+    <div class="submenu-inner" id="earphonesSub">
+      <div onclick="showSection('section14')">atk Horizon</div>
+      <div onclick="showSection('section16')">simgot ew300</div>
+    </div>
+
+       
+<!-- MOUSE -->
+<div onclick="toggleSub('mouseSub'); this.querySelector('.arrow').innerHTML = this.querySelector('.arrow').innerHTML == '▼' ? '▲' : '▼'">
+    Mouses <span class="arrow">▼</span>
+</div>
+    <div class="submenu-inner" id="mouseSub">
+      <div onclick="showSection('section4')">ajazz ajp200</div>
+      <div onclick="showSection('section5')">cybeart ghost</div>
+      <div onclick="showSection('section15')">portonics combo</div>
+    </div>
+
+<!-- KEYBOARD -->
+<div onclick="toggleSub('keyboardSub'); this.querySelector('.arrow').innerHTML = this.querySelector('.arrow').innerHTML == '▼' ? '▲' : '▼'">
+    Keyboards <span class="arrow">▼</span>
+</div>
+    <div class="submenu-inner" id="keyboardSub">
+      <div onclick="showSection('section13')">keysync keycap</div>
+      <div onclick="showSection('section11')">kreo Swarm 75%</div>
+      <div onclick="showSection('section15')">Portonics combo</div>
+    </div>
+
+<!-- LAPTOP -->
+<div onclick="toggleSub('laptopSub'); this.querySelector('.arrow').innerHTML = this.querySelector('.arrow').innerHTML == '▼' ? '▲' : '▼'">
+    Laptop Accessories <span class="arrow">▼</span>
+</div>
+    <div class="submenu-inner" id="laptopSub">
+      <div onclick="showSection('section9')">cooling Pad</div>
+      <div onclick="showSection('section10')">laptop Stand</div>
+    </div>
+
+ <!-- OTHERS -->
+<div onclick="toggleSub('otherSub'); this.querySelector('.arrow').innerHTML = this.querySelector('.arrow').innerHTML == '▼' ? '▲' : '▼'">
+    Others <span class="arrow">▼</span>
+</div>
+    <div class="submenu-inner" id="otherSub">
+      <div onclick="showSection('section12')">table for PC</div>
+    </div>
+
+  </div>
+
+  <!-- WALLPAPERS -->
+<div class="menu-item" onclick="window.location.href='https://freewallpaper.github.io/'">
+    Wallpapers
+  </div>
+
+</div>
+
+
+
+
+<h1 style="position:absolute; left:-9999px;">MZ90FPS</h1>
+
+<div id="searchIcon" onclick="openSearch()">🔍</div>
+
+<div id="searchBar">
+<input id="searchInput" type="text" placeholder="Search...">
+</div>
+<div id="closeSearch" onclick="closeSearch()">✕</div>
+
+<div id="main">
+
+<div class="profile">
+<a href="https://www.instagram.com/mz90fps">
+<img src="Logo.png">
+</a>
+</div>
+
+<div class="name">MZ90FPS <img src="bluetick.png"></div>
+
+
+<div class="social">
+<a href="https://www.Instagram.com/mz90fps">
+<img src="Instagram.png">
+</a>
+<a href="mailto:mazinetvtr@gmail.com">
+<img src="email.png">
+</a>
+</div>
+
+<div class="container">
+
+
+
+<!-- BUTTONS HOME ALL -->
+
+
+<div class="btn" onclick="window.location.href='https://freewallpaper.github.io/'">
+<div class="left">
+<div class="text">Wallpapers links ➜</div>
+</div>
+</div>
+
+
+<!-- square buttonsss square buttonsss square buttonsss square buttonsss square buttonsss square buttonsss square square buttonsss square buttonsss buttonsss  -->
+
+<style>
+.setup-products{
+    margin-top:15px;
+}
+
+.setup-title{
+    text-align:center;
+    font-size:22px;
+    font-weight:700;
+    color:#222;
+    margin-bottom:12px;
+}
+
+.setup-scroll-wrapper{
+    position:relative;
+    max-width:900px;
+    margin:0 auto;
+}
+
+.setup-scroll{
+    display:flex;
+    gap:16px;
+    overflow-x:auto;
+    overflow-y:hidden;
+    scroll-behavior:smooth;
+    -webkit-overflow-scrolling:touch;
+    padding:8px 20px 15px;
+    scrollbar-width:none;
+}
+
+.setup-scroll::-webkit-scrollbar{
+    display:none;
+}
+
+.setup-card{
+    flex:0 0 auto;
+    width:165px;
+    background:#cdbca6;
+    border-radius:22px;
+    padding:10px;
+    box-sizing:border-box;
+    box-shadow:0 4px 14px rgba(0,0,0,.08);
+}
+
+.setup-card img{
+    width:100%;
+    height:120px;
+    object-fit:cover;
+    display:block;
+    border-radius:16px;
+}
+
+.product-name{
+    margin-top:10px;
+    font-size:15px;
+    font-weight:600;
+    color:#222;
+    line-height:1.35;
+    text-align:center;
+    height:42px;
+    overflow:hidden;
+}
+
+.view-btn{
+    width:100%;
+    border:none;
+    cursor:pointer;
+    margin-top:10px;
+    background:#b69b7d;
+    color:white;
+    font-size:14px;
+    font-weight:600;
+    padding:11px 0;
+    border-radius:999px;
+    transition:.25s;
+}
+
+.view-btn:hover{
+    background:#9d8366;
+}
+
+.scroll-btn{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    width:40px;
+    height:40px;
+    border:none;
+    border-radius:50%;
+    background:#b69b7d;
+    color:#fff;
+    font-size:20px;
+    cursor:pointer;
+    z-index:5;
+}
+
+.scroll-left{
+    left:-15px;
+}
+
+.scroll-right{
+    right:-15px;
+}
+
+@media(max-width:768px){
+
+.scroll-btn{
+    display:none;
+}
+
+.setup-card{
+    width:155px;
+}
+
+.setup-card img{
+    height:110px;
+}
+
+.product-name{
+    font-size:14px;
+}
+
+}
+</style>
+
+<div class="setup-products">
+
+    <div class="setup-title">
+        My Setup Products
+    </div>
+
+    <div class="setup-scroll-wrapper">
+
+        <button class="scroll-btn scroll-left"
+        onclick="scrollProducts(-250)">
+        ❮
+        </button>
+
+        <div class="setup-scroll" id="setupScroll">
+
+            <!-- led strip radiyon -->
+            <div class="setup-card">
+
+                <img src="radiyon.jpg">
+
+                <div class="product-name">
+                    Smart RGBIC LED Strip Light
+                </div>
+
+                <button class="view-btn"
+                onclick="showSection('section17')">
+                View
+                </button>
+
+            </div>
+
+            <!-- wall light -->
+            <div class="setup-card">
+
+                <img src="Walllight01.png">
+
+                <div class="product-name">
+                  Wall Light LED Lamp
+                </div>
+
+                <button class="view-btn"
+                onclick="showSection('section7')">
+                View
+                </button>
+
+            </div>
+
+            <!-- ajazz aj200p mouse-->
+            <div class="setup-card">
+
+                <img src="AJ200P.png">
+
+                <div class="product-name">
+                    Ajazz AJ200P Mouse
+                </div>
+
+                <button class="view-btn"
+                onclick="showSection('section4')">
+                View
+                </button>
+
+            </div>
+
+            <!-- krreo mirage controller-->
+            <div class="setup-card">
+
+                <img src="Mirage.png">
+
+                <div class="product-name">
+                    Kreo Mirage Controller
+                </div>
+
+                <button class="view-btn"
+                onclick="showSection('section3')">
+                View
+                </button>
+
+            </div>
+
+                     <!-- zebronics cooling pad -->
+            <div class="setup-card">
+
+                <img src="Coolingpad.png">
+
+                <div class="product-name">
+                  Laptop Cooling Pad
+                </div>
+
+                <button class="view-btn"
+                onclick="showSection('section9')">
+                View
+                </button>
+
+            </div>
+
+                     <!-- kreo keybod swarm 65-->
+            <div class="setup-card">
+
+                <img src="Kreokeeb1.png">
+
+                <div class="product-name">
+                  Kreo Swarm 75% Wireless Mechanical Keyboard
+                </div>
+
+                <button class="view-btn"
+                onclick="showSection('section11')">
+                View
+                </button>
+
+            </div>
+
+                     <!-- RGB Neon LED Strip Light -->
+            <div class="setup-card">
+
+                <img src="Rgbneon1.png">
+
+                <div class="product-name">
+                 RGB Neon LED Strip Light
+                </div>
+
+                <button class="view-btn"
+                onclick="showSection('section6')">
+                View
+                </button>
+
+            </div>
+
+
+                     <!-- Wood Computer Desk -->
+            <div class="setup-card">
+
+                <img src="Desk.png">
+
+                <div class="product-name">
+               Wood Computer Desk
+                </div>
+
+                <button class="view-btn"
+                onclick="showSection('section12')">
+                View
+                </button>
+
+            </div>
+
+
+             
+
+             
+        </div>
+
+        <button class="scroll-btn scroll-right"
+        onclick="scrollProducts(250)">
+        ❯
+        </button>
+
+    </div>
+
+</div>
+
+<script>
+function scrollProducts(amount){
+    document.getElementById("setupScroll").scrollBy({
+        left: amount,
+        behavior: "smooth"
+    });
+}
+</script>
+
+
+
+<!-- end  end end end end end end end en dn  end  end end end end end end  -->
+     
+
+<div class="btn" onclick="showSection('section17')">
+<div class="left">
+<img src="radiyon.jpg">
+<div class="text">Smart RGBIC LED Strip Light</div>
+</div>
+<div class="dots" onclick="shareLink(event, 'https://amzn.to/4oebPlN')">⋮</div>
+</div>
+
+
+<div class="btn" onclick="showSection('section16')">
+<div class="left">
+<img src="ew300.jpg">
+<div class="text">Linsoul SIMGOT EW300 IEM</div>
+</div>
+<div class="dots" onclick="shareLink(event, 'https://amzn.to/4o3beDB')">⋮</div>
+</div>
+
+
+
+     
+
+
+<div class="btn" onclick="showSection('section15')">
+<div class="left">
+<img src="Portonicski5.jpg">
+<div class="text">Portronics Wired Gaming Keyboard & Mouse Combo</div>
+</div>
+<div class="dots" onclick="shareLink(event, 'https://amzn.to/3RkCmSb')">⋮</div>
+</div>
+
+
+     
+
+
+<div class="btn" onclick="showSection('section14')">
+<div class="left">
+<img src="Atkhorizon.jpg">
+<div class="text">ATK Horizon IEM Earphones</div>
+</div>
+<div class="dots" onclick="shareLink(event, 'https://www.atk.store/products/atk-horizon-dsp-gaming-in-ear-earphones')">⋮</div>
+</div>
+
+
+
+     
+
+
+<div class="btn" onclick="showSection('section13')">
+<div class="left">
+<img src="Keysync.jpg">
+<div class="text">Frostcap Artisan Keycap</div>
+</div>
+<div class="dots" onclick="shareLink(event, 'https://amzn.to/3PyL4vD')">⋮</div>
+</div>
+     
+
+
+
+
+     
+     
+<div class="btn" onclick="showSection('section8')">
+<div class="left">
+<img src="Tablelamp1.png">
+<div class="text">Table Lamp for Study Room with Gooseneck</div>
+</div>
+<div class="dots" onclick="shareLink(event, 'https://amzn.to/4ujCvDD')">⋮</div>
+</div>
+     
+     
+
+
+<div class="btn" onclick="showSection('section3')">
+<div class="left">
+<img src="Mirage.png">
+<div class="text">Kreo Mirage Wireless RGB Gaming Controller</div>
+</div>
+<div class="dots" onclick="shareLink(event, 'https://amzn.to/4d2MV4J')">⋮</div>
+</div>
+
+
+
+<div class="btn" onclick="showSection('section4')">
+<div class="left">
+<img src="AJ200P.png">
+<div class="text">AJAZZ AJ200P NL AI Gaming Mouse</div>
+</div>
+<div class="dots" onclick="shareLink(event, 'https://ajazzbrand.com/products/ajazz-aj200p-nl-ai-mc-wireless-ai-gaming-mouse-nearlink-main-control-al-interaction-magnetic-wireless-endurance')">⋮</div>
+</div>
+
+
+  
+<div class="btn" onclick="showSection('section5')">
+<div class="left">
+<img src="Ghostmouse.png">
+<div class="text">Cybeart GHOST Gaming Mouse </div>
+</div>
+<div class="dots" onclick="shareLink(event, 'https://amzn.to/4cCwRqn')">⋮</div>
+</div>
+
+
+  
+<div class="btn" onclick="showSection('section6')">
+<div class="left">
+<img src="Rgbneon1.png">
+<div class="text">RGB Neon LED Strip Light</div>
+</div>
+<div class="dots" onclick="shareLink(event, 'https://amzn.to/4eMJ4tO')">⋮</div>
+</div>
+
+  
+
+<div class="btn" onclick="showSection('section7')">
+<div class="left">
+<img src="Walllight01.png">
+<div class="text">Wall Light LED Lamp</div>
+</div>
+<div class="dots" onclick="shareLink(event, 'https://amzn.to/4xfUL35')">⋮</div>
+</div>
+
+
+  
+<div class="btn" onclick="showSection('section9')">
+<div class="left">
+<img src="Coolingpad.png">
+<div class="text">Zebronics Laptop Cooling Pad</div>
+</div>
+<div class="dots" onclick="shareLink(event, 'https://amzn.to/4ddNgSb')">⋮</div>
+</div>
+
+
+  
+<div class="btn" onclick="showSection('section10')">
+<div class="left">
+<img src="Laptopstand.png">
+<div class="text">Zebronics Laptop Stand</div>
+</div>
+<div class="dots" onclick="shareLink(event, 'https://amzn.to/4uipiLs')">⋮</div>
+</div>
+
+
+  
+<div class="btn" onclick="showSection('section11')">
+<div class="left">
+<img src="Kreokeeb1.png">
+<div class="text">Kreo Swarm 75% Wireless Mechanical Keyboard</div>
+</div>
+<div class="dots" onclick="shareLink(event, 'https://amzn.to/42D37DK')">⋮</div>
+</div>
+
+
+  
+<div class="btn" onclick="showSection('section12')">
+<div class="left">
+<img src="Desk.png">
+<div class="text"> Wood Computer Desk</div>
+</div>
+<div class="dots" onclick="shareLink(event, 'https://amzn.to/3R95awM')">⋮</div>
+</div>
+
+
+
+
+
+
+     
+     
+
+
+<div style="max-width: 650px; margin: 30px auto; padding: 8px; color: rgba(0,0,0,0.65); font-family: Arial, sans-serif; line-height: 1.4; font-size: 13px;">
+
+  <h4 style="margin-bottom: 4px; font-size: 14px;">About Us</h4>
+  <p>
+    Wallpapers, gaming accessories, and useful tech products with simple and helpful recommendations.
+  </p>
+
+  <h4 style="margin-bottom: 4px; font-size: 14px;">Privacy Policy</h4>
+  <p>
+    We use cookies and analytics to improve experience. No personal data is collected without consent.
+  </p>
+
+  <h4 style="margin-bottom: 4px; font-size: 14px;">Disclaimer</h4>
+  <p>
+    Content is for general info. Affiliate links may earn us a commission at no extra cost.
+  </p>
+
+  <h4 style="margin-bottom: 4px; font-size: 14px;">Contact Us</h4>
+  <p>
+    Contact us anytime for queries or business inquiries. <br>
+    email: mazinetvtr@gamil.com
+  </p>
+
+</div>
+
+
+
+
+
+
+
+     
+</div>
+
+<div style="margin-top:12px; font-size:12px; text-align:center; opacity:0.8;">
+  <a href="#" style="color:inherit; text-decoration:none; margin:0 6px;">About</a> |
+  <a href="#" style="color:inherit; text-decoration:none; margin:0 6px;">Privacy</a> |
+  <a href="#" style="color:inherit; text-decoration:none; margin:0 6px;">Disclaimer</a> |
+  <a href="#" style="color:inherit; text-decoration:none; margin:0 6px;">Contact</a>
+</div>
+
+<div class="footer">
+As an Amazon Associate, I earn from qualifying purchases.<br>
+© 2026 mz90fps
+</div>
+
+</div>
+
+
+
+
+<!-- radiyon led strip light rgb  -->
+<div id="section17" style="display:none;">
+<div class="container">
+
+<!-- 🖼️ PRODUCT IMAGE -->
+<div class="product-image">
+    <img src="radiyon.jpg">
+</div>
+
+<h2>Smart RGBIC LED Strip Light</h2>
+
+<p class="wall-text">
+Smart RGBIC LED Strip Light brings vibrant colors and dynamic lighting effects to your room, workspace, or gaming setup.
+With app and voice control support, it lets you create the perfect atmosphere with ease.
+</p>
+
+<p class="wall-text">
+✔ App & voice control<br>
+✔ RGBIC color effects <br>
+✔ Music sync mode <br>
+✔ Easy installation
+</p>
+
+<!-- 🔗 MAIN LINK -->
+<div class="btn" onclick="openLink('https://amzn.to/4e7J8ma')">
+<div class="left">
+<div class="text">Buy Now / View Product ➜</div>
+</div>
+</div>
+
+<!-- 🔙 BACK -->
+<div class="btn" onclick="goBack()"
+<div class="left">
+<div class="text">⬅ Back</div>
+</div>
+</div>
+
+</div>
+</div>
+
+
+
+
+
+
+     
+
+
+
+
+
+<!-- simgot ew300 iem  -->
+<div id="section16" style="display:none;">
+<div class="container">
+
+<!-- 🖼️ PRODUCT IMAGE -->
+<div class="product-image">
+    <img src="ew300.jpg">
+</div>
+
+<h2>Linsoul SIMGOT EW300 Hybrid IEM</h2>
+
+<p class="wall-text">
+Linsoul SIMGOT EW300 Hybrid IEM is designed to deliver detailed sound with a powerful hybrid driver setup.
+It offers clear audio positioning, rich bass, and excellent clarity, making it ideal for both gaming and music listening.
+</p>
+
+<p class="wall-text">
+✔ Hybrid driver technology<br>
+✔ Clear and detailed sound <br>
+✔ Precise gaming audio positioning <br>
+✔ Detachable premium cable
+</p>
+
+<!-- 🔗 MAIN LINK -->
+<div class="btn" onclick="openLink('https://amzn.to/4vkUoT6')">
+<div class="left">
+<div class="text">Buy Now / View Product ➜</div>
+</div>
+</div>
+
+<!-- 🔙 BACK -->
+<div class="btn" onclick="goBack()"
+<div class="left">
+<div class="text">⬅ Back</div>
+</div>
+</div>
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+     
+
+<!-- portonics ki5 keyb and mouse  -->
+<div id="section15" style="display:none;">
+<div class="container">
+
+<!-- 🖼️ PRODUCT IMAGE -->
+<div class="product-image">
+    <img src="Portonicski5.jpg">
+</div>
+
+<h2>Portronics Wired Gaming Keyboard & Mouse Combo</h2>
+
+<p class="wall-text">
+Portronics Ki-Pad 5 Gaming Combo is designed for smooth gaming and everyday use with a stylish keyboard and responsive mouse setup.
+It offers comfortable typing, gaming-focused performance, and an attractive RGB-style gaming look for your desk setup.
+</p>
+
+<p class="wall-text">
+✔ Wired gaming combo<br>
+✔ Responsive keyboard & mouse <br>
+✔ Comfortable typing experience <br>
+✔ Stylish gaming design
+</p>
+
+<!-- 🔗 MAIN LINK -->
+<div class="btn" onclick="openLink('https://amzn.to/4nFM11Z')">
+<div class="left">
+<div class="text">Buy Now / View Product ➜</div>
+</div>
+</div>
+
+<!-- 🔙 BACK -->
+<div class="btn" onclick="goBack()"
+<div class="left">
+<div class="text">⬅ Back</div>
+</div>
+</div>
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+     
+
+
+
+
+<!-- ATK HORIZON IEM  -->
+<div id="section14" style="display:none;">
+<div class="container">
+
+<!-- 🖼️ PRODUCT IMAGE -->
+<div class="product-image">
+    <img src="Atkhorizon.jpg">
+</div>
+
+<h2>ATK Horizon DSP Gaming In-ear Earphones</h2>
+
+<p class="wall-text">
+ATK Horizon DSP Gaming In-ear Earphones are built for immersive gaming with ultra-clear sound and low-latency performance.
+Its advanced DSP tuning and AI noise cancellation help capture every detail with precise audio positioning.
+</p>
+
+<p class="wall-text">
+✔ Ultra-low latency audio <br>
+✔ 384kHz / 32-bit DSP support <br>
+✔ AI noise cancellation <br>
+✔ Precise in-game sound positioning
+</p>
+
+<!-- 🔗 MAIN LINK -->
+<div class="btn" onclick="openLink('https://www.atk.store/products/atk-horizon-dsp-gaming-in-ear-earphones')">
+<div class="left">
+<div class="text">Buy Now / View Product ➜</div>
+</div>
+</div>
+
+<!-- 🔙 BACK -->
+<div class="btn" onclick="goBack()"
+<div class="left">
+<div class="text">⬅ Back</div>
+</div>
+</div>
+
+</div>
+</div>
+
+
+
+
+
+
+     
+
+
+
+
+
+
+<!-- KEysync ceycap DETAILS PAGE -->
+<div id="section13" style="display:none;">
+<div class="container">
+
+<!-- 🖼️ PRODUCT IMAGE -->
+<div class="product-image">
+    <img src="Keysync.jpg">
+</div>
+
+<h2>Frostcap Artisan Keycap</h2>
+
+<p class="wall-text">
+Frostcap Artisan Keycap is a handmade resin keycap inspired by icy glacier aesthetics and premium keyboard customization.
+Its unique transparent blue design adds a clean and artistic look to any mechanical keyboard setup.
+</p>
+
+<p class="wall-text">
+✔ Handmade resin design <br>
+✔ Glacier-inspired artwork <br>
+✔ Premium artisan finish <br>
+✔ Compatible with mechanical keyboards
+</p>
+
+<!-- 🔗 MAIN LINK -->
+<div class="btn" onclick="openLink('https://amzn.to/4tuYJS8')">
+<div class="left">
+<div class="text">Buy Now / View Product ➜</div>
+</div>
+</div>
+
+<!-- 🔙 BACK -->
+<div class="btn" onclick="goBack()"
+<div class="left">
+<div class="text">⬅ Back</div>
+</div>
+</div>
+
+</div>
+</div>
+
+
+
+
+
+
+
+     
+
+<!-- Wood Computer Desk DETAILS PAGE -->
+<div id="section12" style="display:none;">
+<div class="container">
+
+<!-- 🖼️ PRODUCT IMAGE -->
+<div class="product-image">
+    <img src="Desk.png">
+</div>
+
+<h2>Wood Computer Desk</h2>
+
+<p class="wall-text">
+Wood Computer Desk is a sturdy and stylish workspace solution designed for both work and gaming.
+It offers a clean look with strong build quality, making it perfect for daily use setups.
+</p>
+
+<p class="wall-text">
+✔ Strong wooden build <br>
+✔ Spacious surface <br>
+✔ Modern design <br>
+✔ Stable structure
+</p>
+
+<!-- 🔗 MAIN LINK -->
+<div class="btn" onclick="openLink('https://amzn.to/3R95awM')">
+<div class="left">
+<div class="text">Buy Now / View Product ➜</div>
+</div>
+</div>
+
+<!-- 🔙 BACK -->
+<div class="btn" onclick="goBack()"
+<div class="left">
+<div class="text">⬅ Back</div>
+</div>
+</div>
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+<!-- KREO KEYBOARD SWARM DETAILS PAGE -->
+<div id="section11" style="display:none;">
+<div class="container">
+
+<!-- 🖼️ PRODUCT IMAGE -->
+<div class="product-image">
+    <img src="Kreokeeb1.png">
+</div>
+
+<h2>Kreo Swarm 75% Wireless Mechanical Keyboard</h2>
+
+<p class="wall-text">
+Kreo Swarm 75% Wireless Mechanical Keyboard offers a compact layout with powerful performance for gaming and typing.
+It delivers smooth keystrokes, wireless convenience, and a modern design perfect for any setup.
+</p>
+
+<p class="wall-text">
+✔ 75% compact layout <br>
+✔ Wireless connectivity % BT <br>
+✔ Smooth mechanical keys <br>
+✔ RGB lighting support
+</p>
+
+<!-- 🔗 MAIN LINK -->
+<div class="btn" onclick="openLink('https://amzn.to/3QSTNZL')">
+<div class="left">
+<div class="text">Buy Now / View Product ➜</div>
+</div>
+</div>
+
+<!-- 🔙 BACK -->
+<div class="btn" onclick="goBack()"
+<div class="left">
+<div class="text">⬅ Back</div>
+</div>
+</div>
+
+</div>
+</div>
+
+
+<!-- ZEBRONICS LAPTOP STAND DETAILS PAGE -->
+<div id="section10" style="display:none;">
+<div class="container">
+
+<!-- 🖼️ PRODUCT IMAGE -->
+<div class="product-image">
+    <img src="Laptopstand.png">
+</div>
+
+<h2>NS1000 Laptop Stand</h2>
+
+<p class="wall-text">
+NS1000 Laptop Stand is designed to improve your workspace with better posture and comfort.
+It provides a stable and elevated setup, making it ideal for work, gaming, and daily use.
+</p>
+
+<p class="wall-text">
+✔ Strong build quality <br>
+✔ Ergonomic height design<br>
+✔ Better airflow support <br>
+✔ Foldable & portable
+</p>
+
+<!-- 🔗 MAIN LINK -->
+<div class="btn" onclick="openLink('https://amzn.to/4uipiLs')">
+<div class="left">
+<div class="text">Buy Now / View Product ➜</div>
+</div>
+</div>
+
+<!-- 🔙 BACK -->
+<div class="btn" onclick="goBack()"
+<div class="left">
+<div class="text">⬅ Back</div>
+</div>
+</div>
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ZEBRONICS COOLING PAD DETAILS PAGE -->
+<div id="section9" style="display:none;">
+<div class="container">
+
+<!-- 🖼️ PRODUCT IMAGE -->
+<div class="product-image">
+    <img src="Coolingpad.png">
+</div>
+
+<h2>NC8000 Laptop Cooling Pad</h2>
+
+<p class="wall-text">
+NC8000 Laptop Cooling Pad is designed to keep your laptop cool during heavy usage and gaming.
+It improves airflow and performance while providing a comfortable angle for long hours of use.
+</p>
+
+<p class="wall-text">
+✔ Powerful cooling fans <br>
+✔ Improved airflow <br>
+✔ Ergonomic design <br>
+✔ USB powered
+</p>
+
+<!-- 🔗 MAIN LINK -->
+<div class="btn" onclick="openLink('https://amzn.to/4ddNgSb')">
+<div class="left">
+<div class="text">Buy Now / View Product ➜</div>
+</div>
+</div>
+
+<!-- 🔙 BACK -->
+<div class="btn" onclick="goBack()"
+<div class="left">
+<div class="text">⬅ Back</div>
+</div>
+</div>
+
+</div>
+</div>
+
+
+
+
+
+
+
+<!-- TABLE LAMP LIGHT FOR STUDY DETAILS PAGE -->
+<div id="section8" style="display:none;">
+<div class="container">
+
+<!-- 🖼️ PRODUCT IMAGE -->
+<div class="product-image">
+    <img src="Tablelamp1.png">
+</div>
+
+<h2>Table Lamp</h2>
+
+<p class="wall-text">
+Table Lamp is a simple and stylish lighting option that adds a warm and cozy feel to your space.
+Perfect for desks or bedside use, it provides soft lighting for work, study, or relaxation.
+</p>
+
+<p class="wall-text">
+✔ Soft warm light <br>
+✔ Compact design <br>
+✔ Energy-efficient <br>
+✔ Easy to use
+</p>
+
+<!-- 🔗 MAIN LINK -->
+<div class="btn" onclick="openLink('https://amzn.to/4mWnAwG')">
+<div class="left">
+<div class="text">Buy Now / View Product ➜</div>
+</div>
+</div>
+
+<!-- 🔙 BACK -->
+<div class="btn" onclick="goBack()"
+<div class="left">
+<div class="text">⬅ Back</div>
+</div>
+</div>
+
+</div>
+</div>
+
+
+
+
+
+
+
+<!-- WALL LIGHT LED DETAILS PAGE -->
+<div id="section7" style="display:none;">
+<div class="container">
+
+<!-- 🖼️ PRODUCT IMAGE -->
+<div class="product-image">
+    <img src="Walllight01.png">
+</div>
+
+<h2>Wall Light LED Lamp</h2>
+
+<p class="wall-text">
+Wall Light LED Lamp is a modern lighting solution that adds a clean and stylish glow to any space.
+It creates a soft ambiance, making it perfect for bedrooms, living rooms, or gaming setups.
+</p>
+
+<p class="wall-text">
+✔ Soft ambient light <br>
+✔ Energy-efficient <br>
+✔ Sleek modern look <br>
+✔ Easy installation
+</p>
+
+<!-- 🔗 MAIN LINK -->
+<div class="btn" onclick="openLink('https://amzn.to/4xfUL35')">
+<div class="left">
+<div class="text">Buy Now / View Product ➜</div>
+</div>
+</div>
+
+<!-- 🔙 BACK -->
+<div class="btn" onclick="goBack()"
+<div class="left">
+<div class="text">⬅ Back</div>
+</div>
+</div>
+
+</div>
+</div>
+
+
+<!-- RGB NEON STRIP DETAILS PAGE -->
+<div id="section6" style="display:none;">
+<div class="container">
+
+<!-- 🖼️ PRODUCT IMAGE -->
+<div class="product-image">
+    <img src="Rgbneon1.png">
+</div>
+
+<h2>RGB Neon LED Strip Light</h2>
+
+<p class="wall-text">
+Smart RGB Neon LED Strip Lights bring vibrant colors and dynamic lighting effects to your space.
+With flexible design and smart controls, it’s perfect for upgrading your room or gaming setup.
+</p>
+
+<p class="wall-text">
+✔ Smart control support<br>
+✔ Multiple RGB modes<br>
+✔ Flexible neon design<br>
+✔ Easy installation
+</p>
+
+<!-- 🔗 MAIN LINK -->
+<div class="btn" onclick="openLink('https://amzn.to/4eMJ4tO')">
+<div class="left">
+<div class="text">Buy Now / View Product ➜</div>
+</div>
+</div>
+
+<!-- 🔙 BACK -->
+<div class="btn" onclick="goBack()"
+<div class="left">
+<div class="text">⬅ Back</div>
+</div>
+</div>
+
+</div>
+</div>
+
+
+<!-- CYBERT GHOST MOUSE DETAILS PAGE -->
+<div id="section5" style="display:none;">
+<div class="container">
+
+<!-- 🖼️ PRODUCT IMAGE -->
+<div class="product-image">
+    <img src="Ghostmouse.png">
+</div>
+
+<h2>Cybeart Ghost Gaming Mouse</h2>
+
+<p class="wall-text">
+Ghost 49g Ultra-Light Wired Gaming Mouse is designed for speed and precision with its ultra-lightweight build.
+It delivers smooth tracking and quick response, making it ideal for fast-paced gaming sessions.
+</p>
+
+<p class="wall-text">
+✔ Ultra-light 49g design<br>
+✔ High precision sensor<br>
+✔ Fast wired response<br>
+✔ Comfortable grip <br>
+</p>
+
+<!-- 🔗 MAIN LINK -->
+<div class="btn" onclick="openLink('https://amzn.to/4cCwRqn')">
+<div class="left">
+<div class="text">Buy Now / View Product ➜</div>
+</div>
+</div>
+
+<!-- 🔙 BACK -->
+<div class="btn" onclick="goBack()"
+<div class="left">
+<div class="text">⬅ Back</div>
+</div>
+</div>
+
+</div>
+</div>
+
+
+<!-- AJAAZ AJ200P NL AI MOUSE DETAILS PAGE -->
+<div id="section4" style="display:none;">
+<div class="container">
+
+<!-- 🖼️ PRODUCT IMAGE -->
+<div class="product-image">
+    <img src="AJ200P.png">
+</div>
+
+<h2>Ajazz AJ200P NL AI Gaming Mouse</h2>
+
+<p class="wall-text">
+AJAZZ AJ200P NL AI MC Wireless Gaming Mouse is built for high-speed performance with smart AI features and precision tracking.
+It delivers smooth response, modern design, and reliable wireless control for both gaming and daily use.
+</p>
+
+<p class="wall-text">
+✔ AI Assistant <br>
+✔ High precision DPI <br>
+✔ High precision DPI <br>
+✔ Magnetic charging support <br>
+</p>
+
+<!-- 🔗 MAIN LINK -->
+<div class="btn" onclick="openLink('https://ajazzbrand.com/products/ajazz-aj200p-nl-ai-mc-wireless-ai-gaming-mouse-nearlink-main-control-al-interaction-magnetic-wireless-endurance')">
+<div class="left">
+<div class="text">Buy Now / View Product ➜</div>
+</div>
+</div>
+
+<!-- 🔙 BACK -->
+<div class="btn" onclick="goBack()"
+<div class="left">
+<div class="text">⬅ Back</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<!-- KREO MIRAGE CONTROLLER DETAILS PAGE -->
+<div id="section3" style="display:none;">
+<div class="container">
+
+<!-- 🖼️ PRODUCT IMAGE -->
+<div class="product-image">
+    <img src="Mirage.png">
+</div>
+
+<h2>Kreo Mirage Controller</h2>
+
+<p class="wall-text">
+Kreo Mirage Wireless RGB Gaming Controller is designed for high-performance gaming.
+It features responsive triggers, smooth analog sticks, and RGB lighting for a premium look.
+Perfect for PC gamers who want a console-like experience.
+</p>
+
+<p class="wall-text">
+✔ Wireless connectivity <br>
+✔ RGB lighting effects <br>
+✔ Strong vibration feedback <br>
+✔ Comfortable ergonomic design <br>
+✔ Support PC, Android, iOS & PS4
+</p>
+
+<!-- 🔗 MAIN LINK -->
+<div class="btn" onclick="openLink('https://amzn.to/4d2MV4J')">
+<div class="left">
+<div class="text">Buy Now / View Product ➜</div>
+</div>
+</div>
+
+<!-- 🔙 BACK -->
+<div class="btn" onclick="goBack()"
+<div class="left">
+<div class="text">⬅ Back</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div id="popup" class="popup">Link Copied!</div>
+
+
+
+
+
+     
+<script src="script.js"></script>
+
+
+
+
+
+
+     
+
+
+
+     
+     
+</body>
+</html>
