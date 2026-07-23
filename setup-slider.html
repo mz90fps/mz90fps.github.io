@@ -328,37 +328,67 @@
   
 </div>
 
+
 <script>
 const slider=document.getElementById("setupScroll");
-let down=false,startX,startScroll,drag=false;
-slider.style.cursor="grab";
+let pressed=false,startX=0,lastX=0,lastTime=0,velocity=0,raf=0,startScroll=0,dragging=false;
+
 slider.querySelectorAll("img").forEach(i=>i.draggable=false);
-slider.addEventListener("dragstart",e=>e.preventDefault());
-slider.addEventListener("mousedown",e=>{
- down=true;drag=false;
- slider.classList.add("dragging");
- slider.style.cursor="grabbing";
- startX=e.pageX;
- startScroll=slider.scrollLeft;
+slider.style.cursor="grab";
+
+function stopMomentum(){ if(raf) cancelAnimationFrame(raf); }
+
+function momentum(){
+    slider.scrollLeft-=velocity*18;
+    velocity*=0.95;
+    if(Math.abs(velocity)>0.02){
+        raf=requestAnimationFrame(momentum);
+    }
+}
+
+slider.addEventListener("pointerdown",e=>{
+    pressed=true;
+    dragging=false;
+    stopMomentum();
+    slider.setPointerCapture(e.pointerId);
+    slider.classList.add("dragging");
+    slider.style.cursor="grabbing";
+    startX=lastX=e.clientX;
+    lastTime=performance.now();
+    startScroll=slider.scrollLeft;
 });
-document.addEventListener("mousemove",e=>{
- if(!down)return;
- e.preventDefault();
- const dx=e.pageX-startX;
- if(Math.abs(dx)>4)drag=true;
- slider.scrollLeft=startScroll-dx;
+
+slider.addEventListener("pointermove",e=>{
+    if(!pressed) return;
+    e.preventDefault();
+    const now=performance.now();
+    const dx=e.clientX-startX;
+    slider.scrollLeft=startScroll-dx;
+    const dt=Math.max(now-lastTime,1);
+    velocity=(e.clientX-lastX)/dt;
+    lastX=e.clientX;
+    lastTime=now;
+    if(Math.abs(dx)>4) dragging=true;
 });
-document.addEventListener("mouseup",()=>{
- down=false;
- requestAnimationFrame(()=>{
-   slider.classList.remove("dragging");
-   slider.style.cursor="grab";
- });
-});
-slider.querySelectorAll("button").forEach(b=>{
- b.addEventListener("click",e=>{
-   if(drag){e.preventDefault();e.stopPropagation();}
+
+function endDrag(){
+    if(!pressed) return;
+    pressed=false;
+    slider.classList.remove("dragging");
+    slider.style.cursor="grab";
+    requestAnimationFrame(momentum);
+}
+
+slider.addEventListener("pointerup",endDrag);
+slider.addEventListener("pointercancel",endDrag);
+slider.addEventListener("lostpointercapture",endDrag);
+
+slider.querySelectorAll("button").forEach(btn=>{
+ btn.addEventListener("click",e=>{
+   if(dragging){
+      e.preventDefault();
+      e.stopPropagation();
+   }
  });
 });
 </script>
-  
