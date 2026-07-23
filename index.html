@@ -626,6 +626,230 @@ function scrollProducts(amount){
 <!-- end  end end end end end end end en dn  end  end end end end end end  -->
 
 
+
+<!-- square buttonsss square buttonsss square buttonsss square buttonsss square buttonsss square buttonsss square square buttonsss square buttonsss buttonsss  -->
+
+<style>
+.setup-products{
+    margin-top:15px;
+}
+
+.setup-title{
+    text-align:center;
+    font-size:22px;
+    font-weight:700;
+    color:#222;
+    margin-bottom:12px;
+}
+
+.setup-scroll-wrapper{
+    position:relative;
+    max-width:900px;
+    margin:0 auto;
+}
+
+.setup-scroll{
+    display:flex;
+    gap:16px;
+    overflow-x:auto;
+    overflow-y:hidden;
+    scroll-behavior:smooth;
+    -webkit-overflow-scrolling:touch;
+    padding:8px 20px 15px;
+    scrollbar-width:none;
+}
+
+.setup-scroll::-webkit-scrollbar{
+    display:none;
+}
+
+.setup-card{
+    flex:0 0 auto;
+    width:165px;
+    background:#cdbca6;
+    border-radius:22px;
+    padding:10px;
+    box-sizing:border-box;
+    box-shadow:0 4px 14px rgba(0,0,0,.08);
+}
+
+.setup-card img{
+    width:100%;
+    height:120px;
+    object-fit:cover;
+    display:block;
+    border-radius:16px;
+}
+
+.product-name{
+    margin-top:10px;
+    font-size:15px;
+    font-weight:600;
+    color:#222;
+    line-height:1.35;
+    text-align:center;
+    height:42px;
+    overflow:hidden;
+}
+
+.view-btn{
+    width:100%;
+    border:none;
+    cursor:pointer;
+    margin-top:10px;
+    background:#b69b7d;
+    color:white;
+    font-size:14px;
+    font-weight:600;
+    padding:11px 0;
+    border-radius:999px;
+    transition:.25s;
+}
+
+.view-btn:hover{
+    background:#9d8366;
+}
+
+.scroll-btn{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    width:40px;
+    height:40px;
+    border:none;
+    border-radius:50%;
+    background:#b69b7d;
+    color:#fff;
+    font-size:20px;
+    cursor:pointer;
+    z-index:5;
+}
+
+.scroll-left{
+    left:-15px;
+}
+
+.scroll-right{
+    right:-15px;
+}
+
+@media(max-width:768px){
+
+.scroll-btn{
+    display:none;
+}
+
+.setup-card{
+    width:155px;
+}
+
+.setup-card img{
+    height:110px;
+}
+
+.product-name{
+    font-size:14px;
+}
+
+}
+</style>
+
+<div class="setup-products">
+
+    <div class="setup-title">
+        My Setup Products
+    </div>
+
+    <div class="setup-scroll-wrapper">
+
+        <button class="scroll-btn scroll-left"
+        onclick="scrollProducts(-250)">
+        ❮
+        </button>
+
+        <div class="setup-scroll" id="setupScroll">
+
+
+<!-- SIMGOT EM6L -->
+<div class="setup-card">
+
+    <img src="Em6l.jpg">
+
+    <div class="product-name">
+        SIMGOT EM6L
+    </div>
+
+    <button class="view-btn"
+    onclick="showSection('section22')">
+        View
+    </button>
+
+</div>
+
+
+<!-- ATK Horizon DSP -->
+<div class="setup-card">
+
+    <img src="Atkhorizon.jpg">
+
+    <div class="product-name">
+        ATK Horizon DSP
+    </div>
+
+    <button class="view-btn"
+    onclick="showSection('section14')">
+        View
+    </button>
+
+</div>
+
+
+<!-- SIMGOT EW300 -->
+<div class="setup-card">
+
+    <img src="ew300.jpg">
+
+    <div class="product-name">
+        SIMGOT EW300
+    </div>
+
+    <button class="view-btn"
+    onclick="showSection('section16')">
+        View
+    </button>
+
+</div>
+
+
+             
+        </div>
+
+        <button class="scroll-btn scroll-right"
+        onclick="scrollProducts(250)">
+        ❯
+        </button>
+
+    </div>
+
+</div>
+
+<script>
+function scrollProducts(amount){
+    document.getElementById("setupScroll").scrollBy({
+        left: amount,
+        behavior: "smooth"
+    });
+}
+</script>
+
+
+
+<!-- end  end end end end end end end en dn  end  end end end end end end  -->
+
+
+     
+
+
 <div class="btn" onclick="showSection('section25')">
 <div class="left">
 <img src="Fingersgk1.jpg">
