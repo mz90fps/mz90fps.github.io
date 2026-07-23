@@ -317,6 +317,24 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
+     <!-- iem sliderrrrrrrrrr  -->
+
+<div id="iem-slider-container"></div>
+
+<script>
+fetch("iem-slider.html")
+  .then(res => res.text())
+  .then(html => {
+    document.getElementById("iem-slider-container").innerHTML = html;
+
+    document.querySelectorAll("#iem-slider-container script").forEach(oldScript => {
+      const newScript = document.createElement("script");
+      newScript.textContent = oldScript.textContent;
+      document.body.appendChild(newScript);
+      oldScript.remove();
+    });
+  });
+</script>
      
 
 <!-- end  end end end end end end end en dn  end  end end end end end end  -->
