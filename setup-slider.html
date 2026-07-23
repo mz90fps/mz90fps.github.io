@@ -1,4 +1,4 @@
-<style>
+  <style>
 /* Nee ayacha CSS muzhuvan ivide paste cheyyuka */
 
   <style>
@@ -21,6 +21,10 @@
 }
 
 .setup-scroll{
+    cursor:grab;
+    user-select:none;
+    -webkit-user-select:none;
+    touch-action:pan-x;
     display:flex;
     gap:16px;
     overflow-x:auto;
@@ -29,6 +33,17 @@
     -webkit-overflow-scrolling:touch;
     padding:8px 20px 15px;
     scrollbar-width:none;
+}
+
+.setup-scroll.dragging,
+.setup-scroll.dragging *{
+    user-select:none !important;
+    -webkit-user-select:none !important;
+}
+
+.setup-scroll img{
+    -webkit-user-drag:none;
+    user-select:none;
 }
 
 .setup-scroll::-webkit-scrollbar{
@@ -83,8 +98,6 @@
 }
 
 .scroll-btn{
-    display:none;
-
     position:absolute;
     top:50%;
     transform:translateY(-50%);
@@ -110,8 +123,6 @@
 @media(max-width:768px){
 
 .scroll-btn{
-    display:none;
-
     display:none;
 }
 
@@ -319,26 +330,35 @@
 
 <script>
 const slider=document.getElementById("setupScroll");
-let isDown=false,startX,scrollLeft;
-
+let down=false,startX,startScroll,drag=false;
+slider.style.cursor="grab";
+slider.querySelectorAll("img").forEach(i=>i.draggable=false);
+slider.addEventListener("dragstart",e=>e.preventDefault());
 slider.addEventListener("mousedown",e=>{
-  isDown=true;
-  slider.style.cursor="grabbing";
-  startX=e.pageX-slider.offsetLeft;
-  scrollLeft=slider.scrollLeft;
+ down=true;drag=false;
+ slider.classList.add("dragging");
+ slider.style.cursor="grabbing";
+ startX=e.pageX;
+ startScroll=slider.scrollLeft;
+});
+document.addEventListener("mousemove",e=>{
+ if(!down)return;
+ e.preventDefault();
+ const dx=e.pageX-startX;
+ if(Math.abs(dx)>4)drag=true;
+ slider.scrollLeft=startScroll-dx;
 });
 document.addEventListener("mouseup",()=>{
-  isDown=false;
-  slider.style.cursor="grab";
+ down=false;
+ requestAnimationFrame(()=>{
+   slider.classList.remove("dragging");
+   slider.style.cursor="grab";
+ });
 });
-slider.addEventListener("mouseleave",()=>isDown=false);
-slider.addEventListener("mousemove",e=>{
-  if(!isDown) return;
-  e.preventDefault();
-  const x=e.pageX-slider.offsetLeft;
-  const walk=(x-startX)*1.5;
-  slider.scrollLeft=scrollLeft-walk;
+slider.querySelectorAll("button").forEach(b=>{
+ b.addEventListener("click",e=>{
+   if(drag){e.preventDefault();e.stopPropagation();}
+ });
 });
-slider.style.cursor="grab";
 </script>
   
