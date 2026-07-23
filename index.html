@@ -336,7 +336,85 @@ fetch("iem-slider.html")
   });
 </script>
      
+ <!-- keeeeeebbbbbrrddd sliderrrrrrrrrr  -->
+     
+<div id="keyboard-slider-container"></div>
 
+<script>
+fetch("keyboard-slider.html")
+  .then(res => res.text())
+  .then(html => {
+    document.getElementById("keyboard-slider-container").innerHTML = html;
+
+    document.querySelectorAll("#keyboard-slider-container script").forEach(oldScript => {
+      const newScript = document.createElement("script");
+      newScript.textContent = oldScript.textContent;
+      document.body.appendChild(newScript);
+      oldScript.remove();
+    });
+  });
+</script>
+
+
+
+
+     
+<div id="mouse-slider-container"></div>
+
+<script>
+fetch("mouse-slider.html")
+  .then(res => res.text())
+  .then(html => {
+    document.getElementById("mouse-slider-container").innerHTML = html;
+
+    document.querySelectorAll("#mouse-slider-container script").forEach(oldScript => {
+      const newScript = document.createElement("script");
+      newScript.textContent = oldScript.textContent;
+      document.body.appendChild(newScript);
+      oldScript.remove();
+    });
+  });
+</script>
+
+
+
+
+     <div id="controller-slider-container"></div>
+
+<script>
+fetch("controller-slider.html")
+  .then(res => res.text())
+  .then(html => {
+    document.getElementById("controller-slider-container").innerHTML = html;
+
+    document.querySelectorAll("#controller-slider-container script").forEach(oldScript => {
+      const newScript = document.createElement("script");
+      newScript.textContent = oldScript.textContent;
+      document.body.appendChild(newScript);
+      oldScript.remove();
+    });
+  });
+</script>
+
+
+
+     <div id="rgb-lights-slider-container"></div>
+
+<script>
+fetch("rgb-lights-slider.html")
+  .then(res => res.text())
+  .then(html => {
+    document.getElementById("rgb-lights-slider-container").innerHTML = html;
+
+    document.querySelectorAll("#rgb-lights-slider-container script").forEach(oldScript => {
+      const newScript = document.createElement("script");
+      newScript.textContent = oldScript.textContent;
+      document.body.appendChild(newScript);
+      oldScript.remove();
+    });
+  });
+</script>
+     
 <!-- end  end end end end end end end en dn  end  end end end end end end  -->
 
 
