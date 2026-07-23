@@ -316,38 +316,6 @@ document.addEventListener("DOMContentLoaded", function () {
 </script>
 
 
-<!-- iem earphones buttons   -->
-
-          <div id="earphones-slider-container"></div>
-
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-
-    fetch("earphones-slider.html")
-        .then(response => response.text())
-        .then(html => {
-            document.getElementById("earphones-slider-container").innerHTML = html;
-
-            // Execute scripts inside setup-slider.html
-            document.querySelectorAll("#earphones-slider-container script").forEach(oldScript => {
-                const newScript = document.createElement("script");
-                if (oldScript.src) {
-                    newScript.src = oldScript.src;
-                } else {
-                    newScript.textContent = oldScript.textContent;
-                }
-                document.body.appendChild(newScript);
-                oldScript.remove();
-            });
-        });
-
-});
-</script>
-
-<!-- end  end end end end end end end en dn  end  end end end end end end  -->
-
-
-
 
      
 
