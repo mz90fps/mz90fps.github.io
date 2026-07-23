@@ -2,7 +2,7 @@
 /* Nee ayacha CSS muzhuvan ivide paste cheyyuka */
 
   <style>
-.earphones-products{
+.setup-products{
     margin-top:15px;
 }
 
@@ -14,13 +14,13 @@
     margin-bottom:12px;
 }
 
-.earphones-scroll-wrapper{
+.setup-scroll-wrapper{
     position:relative;
     max-width:900px;
     margin:0 auto;
 }
 
-.earphones-scroll{
+.setup-scroll{
     cursor:grab;
     user-select:none;
     -webkit-user-select:none;
@@ -35,22 +35,22 @@
     scrollbar-width:none;
 }
 
-.earphones-scroll.dragging,
-.earphones-scroll.dragging *{
+.setup-scroll.dragging,
+.setup-scroll.dragging *{
     user-select:none !important;
     -webkit-user-select:none !important;
 }
 
-.earphones-scroll img{
+.setup-scroll img{
     -webkit-user-drag:none;
     user-select:none;
 }
 
-.earphones-scroll::-webkit-scrollbar{
+.setup-scroll::-webkit-scrollbar{
     display:none;
 }
 
-.earphones-card{
+.setup-card{
     flex:0 0 auto;
     width:165px;
     background:#cdbca6;
@@ -60,7 +60,7 @@
     box-shadow:0 4px 14px rgba(0,0,0,.08);
 }
 
-.earphones-card img{
+.setup-card img{
     width:100%;
     height:120px;
     object-fit:cover;
@@ -126,11 +126,11 @@
     display:none;
 }
 
-.earphones-card{
+.setup-card{
     width:155px;
 }
 
-.earphones-card img{
+.setup-card img{
     height:110px;
 }
 
@@ -150,33 +150,33 @@ opacity:0;
 z-index:999999;
 transition:opacity .12s;
 }
-.earphones-scroll.dragging{cursor:none!important;}
+.setup-scroll.dragging{cursor:none!important;}
 
 </style>
   
 
-<div class="earphones-products">
+<div class="setup-products">
 
     <!-- Nee ayacha My Setup Products HTML muzhuvan ivide -->
 
 <div class="setup-products">
 
     <div class="setup-title">
-       iem earphones
+        My Setup Products
     </div>
 
-    <div class="earphones-scroll-wrapper">
-<div class="earphones-scroll" id="earphonesScroll">
+    <div class="setup-scroll-wrapper">
+<div class="setup-scroll" id="setupScroll">
 
 
 
             <!-- cell bell gaming chair -->
-            <div class="earphones-card">
+            <div class="setup-card">
 
                 <img src="Cellbell.jpg">
 
-                <div class="earphones-name">
-                 gaming chair
+                <div class="product-name">
+                 yes tye ssshsh
                 </div>
 
                 <button class="view-btn"
@@ -187,12 +187,14 @@ transition:opacity .12s;
             </div>
 
 
-           
+
+
+
   
 </div>
 
 <script>
-const slider=document.getElementById("earphonesScroll");
+const slider=document.getElementById("setupScroll");
 let down=false,startX,startScroll,drag=false;
 slider.style.cursor="grab";
 slider.querySelectorAll("img").forEach(i=>i.draggable=false);
