@@ -1,0 +1,54 @@
+<style>
+.iem-products{margin-top:35px}
+.iem-title{text-align:center;font-size:22px;font-weight:700;color:#222;margin-bottom:12px}
+.iem-scroll{display:flex;gap:16px;overflow-x:auto;scroll-behavior:smooth;padding:8px 20px 15px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.iem-scroll::-webkit-scrollbar{display:none}
+.iem-card{flex:0 0 auto;width:165px;background:#cdbca6;border-radius:22px;padding:10px;box-sizing:border-box;box-shadow:0 4px 14px rgba(0,0,0,.08)}
+.iem-card img{width:100%;height:120px;object-fit:cover;border-radius:16px}
+.iem-name{margin-top:10px;font-size:15px;font-weight:600;text-align:center;height:42px;color:#222}
+.iem-btn{width:100%;margin-top:10px;padding:11px 0;border:none;border-radius:999px;background:#b69b7d;color:#fff;font-weight:600;cursor:pointer}
+.iem-btn:hover{background:#9d8366}
+@media(max-width:768px){.iem-card{width:155px}.iem-card img{height:110px}}
+</style>
+
+<div class="iem-products">
+  <div class="iem-title">IEM Earphones</div>
+
+  <div class="iem-scroll">
+
+    <div class="iem-card">
+      <img src="Em6l.jpg">
+      <div class="iem-name">SIMGOT EM6L</div>
+      <button class="iem-btn" onclick="showSection('section22')">View</button>
+    </div>
+
+    <div class="iem-card">
+      <img src="Atkhorizon.jpg">
+      <div class="iem-name">ATK Horizon DSP</div>
+      <button class="iem-btn" onclick="showSection('section14')">View</button>
+    </div>
+
+    <div class="iem-card">
+      <img src="ew300.jpg">
+      <div class="iem-name">SIMGOT EW300</div>
+      <button class="iem-btn" onclick="showSection('section16')">View</button>
+    </div>
+
+  </div>
+</div>
+
+<script>
+const iem=document.querySelector(".iem-scroll");
+let down=false,startX,startLeft;
+iem.addEventListener("mousedown",e=>{
+ down=true;
+ startX=e.pageX;
+ startLeft=iem.scrollLeft;
+});
+document.addEventListener("mousemove",e=>{
+ if(!down) return;
+ e.preventDefault();
+ iem.scrollLeft=startLeft-(e.pageX-startX);
+});
+document.addEventListener("mouseup",()=>down=false);
+</script>
