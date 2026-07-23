@@ -83,6 +83,8 @@
 }
 
 .scroll-btn{
+    display:none;
+
     position:absolute;
     top:50%;
     transform:translateY(-50%);
@@ -108,6 +110,8 @@
 @media(max-width:768px){
 
 .scroll-btn{
+    display:none;
+
     display:none;
 }
 
@@ -138,13 +142,7 @@
     </div>
 
     <div class="setup-scroll-wrapper">
-
-        <button class="scroll-btn scroll-left"
-        onclick="scrollProducts(-250)">
-        ❮
-        </button>
-
-        <div class="setup-scroll" id="setupScroll">
+<div class="setup-scroll" id="setupScroll">
 
 
 
@@ -320,10 +318,27 @@
 </div>
 
 <script>
-function scrollProducts(amount){
-    document.getElementById("setupScroll").scrollBy({
-        left: amount,
-        behavior: "smooth"
-    });
-}
+const slider=document.getElementById("setupScroll");
+let isDown=false,startX,scrollLeft;
+
+slider.addEventListener("mousedown",e=>{
+  isDown=true;
+  slider.style.cursor="grabbing";
+  startX=e.pageX-slider.offsetLeft;
+  scrollLeft=slider.scrollLeft;
+});
+document.addEventListener("mouseup",()=>{
+  isDown=false;
+  slider.style.cursor="grab";
+});
+slider.addEventListener("mouseleave",()=>isDown=false);
+slider.addEventListener("mousemove",e=>{
+  if(!isDown) return;
+  e.preventDefault();
+  const x=e.pageX-slider.offsetLeft;
+  const walk=(x-startX)*1.5;
+  slider.scrollLeft=scrollLeft-walk;
+});
+slider.style.cursor="grab";
 </script>
+  
